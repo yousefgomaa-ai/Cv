@@ -3,40 +3,40 @@ body { font-family: 'Poppins', sans-serif; background-color: #f1f3f6; margin: 0;
 
 .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 2000; }
 .lang-switch button { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 50px; background: white; color: #1a2a6c; font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #eee; transition: 0.3s; }
-.lang-switch button:hover { transform: scale(1.05); }
 
-header { background: linear-gradient(135deg, #1a2a6c, #2a4858); color: white; padding: 70px 20px 40px; text-align: center; }
-.header-container { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
-.profile-text { text-align: left; }
-header h1 { margin: 0; font-size: 2.5em; font-weight: 700; }
-#title { font-size: 1.2em; color: #3498db; margin-top: 5px; }
+header { background: linear-gradient(135deg, #1a2a6c, #2a4858); color: white; padding: 60px 20px 40px; text-align: center; }
+.header-container { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+.profile-text { text-align: left; flex: 1; }
+header h1 { margin: 0; font-size: 2.2em; font-weight: 700; }
+#title { font-size: 1.1em; color: #3498db; margin-top: 5px; }
+.contact-info { margin-top: 15px; font-size: 0.85em; opacity: 0.9; }
+.contact-info span { display: block; margin-bottom: 5px; }
 
-.profile-image-area { width: 150px; height: 150px; border-radius: 50%; overflow: hidden; border: 5px solid rgba(255, 255, 255, 0.2); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+/* تصميم الصورة الدائرية الصغيرة (مثل البروفايل) */
+.profile-image-area { width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 5px solid rgba(255, 255, 255, 0.2); box-shadow: 0 8px 25px rgba(0,0,0,0.3); flex-shrink: 0; }
 .profile-image-area img { width: 100%; height: 100%; object-fit: cover; }
 
 .nav-icons { display: flex; justify-content: center; gap: 10px; margin-top: 35px; flex-wrap: wrap; }
-.nav-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 10px 18px; border-radius: 30px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
+.nav-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 10px 18px; border-radius: 30px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 8px; font-size: 0.85em; }
 .nav-btn.active, .nav-btn:hover { background: #3498db; border-color: #3498db; transform: translateY(-3px); }
 
-.container { max-width: 850px; margin: -50px auto 50px; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); position: relative; z-index: 10; }
+.container { max-width: 850px; margin: -40px auto 50px; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); position: relative; z-index: 10; }
 .content-sec { animation: fadeIn 0.6s ease; margin-bottom: 25px; }
-
 @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-h2 { color: #1a2a6c; border-bottom: 2px solid #f0f0f0; padding-bottom: 12px; margin-top: 30px; display: flex; align-items: center; gap: 12px; }
+h2 { color: #1a2a6c; border-bottom: 2px solid #f0f0f0; padding-bottom: 12px; margin-top: 30px; display: flex; align-items: center; gap: 12px; font-size: 1.3em; }
 h2 i { color: #3498db; }
-
 .job { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #f9f9f9; }
-.job-date { color: #3498db; font-weight: 600; font-size: 0.85em; }
-
-.skills { display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0; }
-.skills span { background: #eef2f7; color: #1a2a6c; padding: 10px 18px; border-radius: 8px; font-size: 0.85em; font-weight: 600; display: flex; align-items: center; gap: 7px; }
+.job-date { color: #3498db; font-weight: 600; font-size: 0.8em; }
+.skills { display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0; }
+.skills span { background: #eef2f7; color: #1a2a6c; padding: 8px 15px; border-radius: 8px; font-size: 0.8em; font-weight: 600; display: flex; align-items: center; gap: 7px; }
 
 footer { text-align: center; padding: 30px; opacity: 0.5; font-size: 0.8em; }
 
-@media (max-width: 600px) {
-    .header-container { flex-direction: column-reverse; }
+@media (max-width: 768px) {
+    .header-container { flex-direction: column-reverse; text-align: center; }
     .profile-text { text-align: center; }
+    .profile-image-area { width: 120px; height: 120px; margin-bottom: 20px; }
     .nav-btn span { display: none; }
-    .container { margin: -30px 15px 30px; padding: 20px; }
+    .container { margin: -20px 15px 30px; padding: 25px; }
 }
