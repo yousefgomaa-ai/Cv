@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yousef Gomaa | Professional Accountant | AR & AP </title>
+    <title>Yousef Gomaa | Treasury & Financial Accountant</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -20,15 +20,15 @@
         <div class="header-container">
             <div class="profile-text">
                 <h1 id="name">Yousef Mohamed Gomaa</h1>
-                <p id="title">Accountant | Receivable & Payable </p>
+                <p id="title">Treasury Accountant | AR & AP Specialist</p>
                 <div class="contact-info">
                     <span><i class="fas fa-envelope"></i> Yousefgomaa14@gmail.com</span>
                     <span><i class="fas fa-phone"></i> 01098137090</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</span>
+                    <span id="location-text"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</span>
                 </div>
             </div>
-            <div class="profile-image-place">
-                <i class="fas fa-user-circle fa-10x"></i>
+            <div class="profile-image-area">
+                <img src="yousef.jpg" alt="Yousef Gomaa">
             </div>
         </div>
         
@@ -44,7 +44,7 @@
     <section class="container">
         <div id="summary-sec" class="content-sec">
             <h2 id="about-title"><i class="fas fa-user-tie"></i> Professional Summary</h2>
-            <p id="about-text">Results-driven Accountant with over two years of experience in managing the full AR/AP cycles, bank reconciliations, and financial reporting. Proficient in Odoo and Comsys ERP systems with a strong commitment to accuracy and efficiency in financial data. Experienced in diverse industries including tourism, hospitality, and food supply, ensuring compliance with IFRS.</p>
+            <p id="about-text">Results-oriented Treasury Accountant with 2+ years of experience in managing AR/AP cycles, financial reporting, and cash flow management. Proficient in Odoo and Comsys ERP systems, ensuring full compliance with IFRS standards to support organizational financial integrity.</p>
         </div>
 
         <div id="exp-sec" class="content-sec">
@@ -52,31 +52,28 @@
             
             <div class="job">
                 <h3 id="job1-title">Blue Ocean Hotel & Diving Center Management</h3>
-                <span id="job1-date">May 2025 - Present</span>
+                <span class="job-date" id="job1-date">May 2025 - Present</span>
                 <ul id="job1-list">
-                    <li>Record and review all daily revenue and payment transactions, ensuring proper documentation.</li>
-                    <li>Perform periodic reconciliations for customer, vendor, and bank accounts to maintain financial accuracy.</li>
-                    <li>Monitor outstanding invoices and ensure timely collection from customers and approved payments.</li>
+                    <li>Recording and reviewing daily revenue and payment transactions accurately.</li>
+                    <li>Performing periodic reconciliations for customer, vendor, and bank accounts.</li>
                 </ul>
             </div>
 
             <div class="job">
                 <h3 id="job2-title">Winners Food Supplies Company (Receivable Accountant)</h3>
-                <span id="job2-date">Dec 2024 - April 2025</span>
+                <span class="job-date" id="job2-date">Dec 2024 - April 2025</span>
                 <ul id="job2-list">
-                    <li>Managed customer balances, preparing all daily transactions including sales invoices, payments, and settlements.</li>
-                    <li>Recorded all sales invoices daily on the customer accounts programs.</li>
-                    <li>Prepared monthly reports regarding sales invoices and maintained customer data accuracy.</li>
+                    <li>Managing customer balances and recording daily sales invoices and payments.</li>
+                    <li>Preparing monthly sales and collection reports to ensure data accuracy.</li>
                 </ul>
             </div>
 
             <div class="job">
-                <h3 id="job3-title">Beach Safari Nubian Resort (General Cashier & Purchasing Accountant)</h3>
-                <span id="job3-date">Jun 2024 - Nov 2024</span>
+                <h3 id="job3-title">Beach Safari Nubian Resort (Treasury Accountant & Purchasing)</h3>
+                <span class="job-date" id="job3-date">Jun 2024 - Nov 2024</span>
                 <ul id="job3-list">
-                    <li>Followed up on daily treasury movements and recorded related journal entries.</li>
-                    <li>Prepared accounting entries for receivables and payments to suppliers.</li>
-                    <li>Monitored purchase invoices, quantities received, and ensured proper VAT handling for purchases.</li>
+                    <li>Monitoring daily treasury movements and recording related journal entries.</li>
+                    <li>Managing purchase invoices and ensuring correct VAT treatment per IFRS.</li>
                 </ul>
             </div>
         </div>
@@ -91,13 +88,14 @@
             </div>
             <h2 id="lang-title"><i class="fas fa-language"></i> Languages</h2>
             <div class="skills" id="lang-list">
-                <span>Arabic (Native)</span> <span>English (Good)</span> 
+                <span id="lang-ar">Arabic (Native)</span> 
+                <span id="lang-en">English (Good)</span>
             </div>
         </div>
 
         <div id="future-sec" class="content-sec">
             <h2 id="future-title"><i class="fas fa-rocket"></i> Future Plans</h2>
-            <p id="future-text">Currently preparing for Certified Management Accountant (CMA) and International Financial Reporting Standards (IFRS) certifications to deepen my expertise in international finance and enhance my professional value.</p>
+            <p id="future-text">Actively preparing for Certified Management Accountant (CMA) and IFRS certifications to master international financial reporting and management accounting standards.</p>
         </div>
 
         <div id="edu-sec" class="content-sec">
@@ -111,11 +109,9 @@
     </footer>
 
     <script>
-        // وظيفة التصفية (Filtering) لعرض قسم واحد فقط
         function filterSection(sectionId) {
             const sections = document.querySelectorAll('.content-sec');
             sections.forEach(sec => sec.style.display = 'none');
-            
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
 
@@ -128,10 +124,8 @@
             }
         }
 
-        // تشغيل وضع "الكل" افتراضياً عند فتح الموقع
         window.onload = () => { filterSection('all'); };
 
-        // وظيفة الترجمة بين العربي والإنجليزي مع الحفاظ على الأيقونات
         function toggleLanguage() {
             const body = document.getElementById('body-tag');
             const btnSpan = document.querySelector('.lang-switch button span');
@@ -154,45 +148,55 @@
             }
         }
 
-        // تحديث النصوص العربية والإنجليزية
         function updateContent(lang) {
             const content = {
                 'ar': {
                     'name': 'يوسف محمد جمعة',
-                    'title': 'محاسب مالي محترف | متخصص حسابات العملاء والموردين',
+                    'title': 'محاسب خزينة | متخصص حسابات العملاء والموردين',
+                    'location-text': 'القاهرة، مصر',
                     'about-title': 'الملخص المهني',
-                    'about-text': 'محاسب مالي دقيق بخبرة تزيد عن عامين في إدارة دورات الحسابات المدينة والدائنة، والتسويات البنكية، والتقارير المالية. متمكن من استخدام أنظمة Odoo و Comsys ERP مع سجل حافل في تحسين دقة البيانات المالية.',
+                    'about-text': 'محاسب خزينة طموح بخبرة تزيد عن عامين في إدارة الحسابات، التسويات البنكية، والتقارير المالية. متمكن من أنظمة Odoo و Comsys ERP مع التزام كامل بمعايير IFRS الدولية.',
                     'exp-title': 'الخبرة العملية',
                     'job1-title': 'بلو أوشين لإدارة الفنادق ومراكز الغوص',
+                    'job1-date': 'مايو 2025 - الحالي',
                     'job2-title': 'شركة وينرز للمواد الغذائية (محاسب عملاء)',
-                    'job3-title': 'منتجع بيتش سفاري نوبيان (محاسب خزينة ومحاسب مشتريات)',
+                    'job2-date': 'ديسمبر 2024 - أبريل 2025',
+                    'job3-title': 'منتجع بيتش سفاري نوبيان (محاسب خزينة ومشتريات)',
+                    'job3-date': 'يونيو 2024 - نوفمبر 2024',
                     'skills-title': 'الأدوات التقنية (ERP و Office)',
                     'edu-title': 'التعليم',
                     'edu-text': 'بكالوريوس التجارة، جامعة حلوان (دفعة 2022) - التخصص: محاسبة - التقدير: جيد.',
                     'lang-title': 'اللغات',
+                    'lang-ar': 'العربية (اللغة الأم)',
+                    'lang-en': 'الإنجليزية (جيد)',
                     'future-title': 'الخطط المستقبلية',
-                    'future-text': 'أعمل حالياً على التحضير لشهادة المحاسب الإداري المعتمد (CMA) ومعايير التقارير المالية الدولية (IFRS) لتعزيز خبرتي المهنية الدولية.',
+                    'future-text': 'أعمل حالياً على التحضير لشهادة المحاسب الإداري المعتمد (CMA) ومعايير التقارير المالية الدولية (IFRS).',
                     'footer-text': '© 2026 تم التطوير بواسطة يوسف جمعة'
                 },
                 'en': {
                     'name': 'Yousef Mohamed Gomaa',
-                    'title': 'Professional Accountant | AR & AP Specialist',
+                    'title': 'Treasury Accountant | AR & AP Specialist',
+                    'location-text': 'Cairo, Egypt',
                     'about-title': 'Professional Summary',
-                    'about-text': 'Results-driven Accountant with over two years of experience in managing the full AR/AP cycles, bank reconciliations, and financial reporting. Proficient in Odoo and Comsys ERP systems with a strong commitment to accuracy and efficiency.',
+                    'about-text': 'Results-oriented Treasury Accountant with 2+ years of experience in managing AR/AP cycles and financial reporting. Expert in IFRS compliance.',
                     'exp-title': 'Work Experience',
-                    'job1-title': 'Blue Ocean Hotel & Diving Center Management',
-                    'job2-title': 'Winners Food Supplies Company (Receivable Accountant)',
-                    'job3-title': 'Beach Safari Nubian Resort (Treasury accountant & Purchasing)',
+                    'job1-title': 'Blue Ocean Hotel Management',
+                    'job1-date': 'May 2025 - Present',
+                    'job2-title': 'Winners Food Supplies (Receivable Accountant)',
+                    'job2-date': 'Dec 2024 - April 2025',
+                    'job3-title': 'Beach Safari Resort (Treasury Accountant)',
+                    'job3-date': 'Jun 2024 - Nov 2024',
                     'skills-title': 'Technical Toolbox (ERP & Office)',
                     'edu-title': 'Education',
                     'edu-text': 'Bachelor of Commerce, Helwan University (Class of 2022) - Major: Accounting - Grade: Good.',
                     'lang-title': 'Languages',
+                    'lang-ar': 'Arabic (Native)',
+                    'lang-en': 'English (Good)',
                     'future-title': 'Future Plans',
-                    'future-text': 'Currently preparing for CMA (Certified Management Accountant) and IFRS certifications to master international financial reporting.',
+                    'future-text': 'Currently preparing for CMA and IFRS certifications.',
                     'footer-text': '© 2026 Developed by Yousef Gomaa'
                 }
             };
-            
             for (let key in content[lang]) {
                 const el = document.getElementById(key);
                 if(el) el.innerText = content[lang][key];
