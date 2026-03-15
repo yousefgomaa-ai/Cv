@@ -1,57 +1,144 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yousef Gomaa | Accountant Portfolio</title>
+    <title>Yousef Gomaa | Professional Accountant</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body id="body-tag">
+    <div class="lang-switch">
+        <button onclick="toggleLanguage()">العربية</button>
+    </div>
+
     <header>
-        <h1>يوسف محمد جمعة</h1>
-        <p>محاسب مالي | متخصص في حسابات العملاء والموردين</p>
+        <h1 id="name">Yousef Mohamed Gomaa</h1>
+        <p id="title">Accountant | Receivable & Payable Specialist</p>
         <div class="contact-info">
             <span><i class="fas fa-envelope"></i> Yousefgomaa14@gmail.com</span>
             <span><i class="fas fa-phone"></i> 01098137090</span>
-            <span><i class="fas fa-map-marker-alt"></i> حلوان، القاهرة</span>
+            <span><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</span>
         </div>
     </header>
 
     <section class="container">
-        <h2><i class="fas fa-user"></i> الملخص المهني</h2>
-        [span_5](start_span)<p>محاسب طموح يسعى لتقديم قيمة مضافة من خلال دقة التحليل المالي والالتزام بالمعايير المحاسبية[span_5](end_span).</p>
+        <h2 id="about-title"><i class="fas fa-user"></i> Professional Summary</h2>
+        <p id="about-text">A dedicated accountant seeking a position where I can apply my dedication and positive attitude to help the company achieve its goals.</p>
 
-        <h2><i class="fas fa-briefcase"></i> الخبرة العملية</h2>
+        <h2 id="exp-title"><i class="fas fa-briefcase"></i> Work Experience</h2>
+        
         <div class="job">
-            <h3>شركة بلو أوشين لإدارة الفنادق ومراكز الغوص</h3>
-            <span>مايو 2025 - الحالي</span>
-            <ul>
-                [span_6](start_span)<li>تسجيل ومراجعة كافة معاملات الإيرادات والمدفوعات اليومية[span_6](end_span).</li>
-                [span_7](start_span)<li>إجراء المطابقات الدورية لحسابات العملاء والموردين والبنوك[span_7](end_span).</li>
+            <h3 id="job1-title">Blue Ocean Hotel and Diving Center Management</h3>
+            <span id="job1-date">May 2025 - Present</span>
+            <ul id="job1-list">
+                <li>Record and review all daily revenue and payment transactions.</li>
+                <li>Perform periodic reconciliations for customer, vendor, and bank accounts.</li>
+                <li>Monitor outstanding invoices and ensure timely collections.</li>
             </ul>
         </div>
 
         <div class="job">
-            <h3>شركة وينرز للمواد الغذائية (محاسب عملاء)</h3>
-            <span>ديسمبر 2024 - أبريل 2025</span>
-            <ul>
-                [span_8](start_span)<li>متابعة أرصدة العملاء وتسجيل الفواتير والتحصيلات والتسويات[span_8](end_span).</li>
-                [span_9](start_span)<li>إعداد تقارير شهرية عن المبيعات وأرصدة العملاء[span_9](end_span).</li>
+            <h3 id="job2-title">Winners Food Supplies Company (Receivable Accountant)</h3>
+            <span id="job2-date">Dec 2024 - April 2025</span>
+            <ul id="job2-list">
+                <li>Follow up on customer balances and record all transactions (invoices, payments).</li>
+                <li>Record all sales invoices daily on customer accounts programs.</li>
+                <li>Prepare monthly reports on sales invoices and customer data.</li>
             </ul>
         </div>
 
-        <h2><i class="fas fa-graduation-cap"></i> التعليم</h2>
-        [span_10](start_span)<p>بكالوريوس التجارة - جامعة حلوان (دفعة 2022) - تقدير جيد[span_10](end_span).</p>
+        <div class="job">
+            <h3 id="job3-title">Beach Safari Nubian Resort (General Cashier & Purchasing)</h3>
+            <span id="job3-date">Jun 2024 - Nov 2024</span>
+            <ul id="job3-list">
+                <li>Follow up on treasury movements and record related entries.</li>
+                <li>Prepare accounting entries for receivables and payments to suppliers.</li>
+                <li>Follow up on purchase invoices, quantities received, and VAT.</li>
+            </ul>
+        </div>
 
-        <h2><i class="fas fa-tools"></i> المهارات التقنية</h2>
+        <h2 id="edu-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+        <p id="edu-text">Bachelor of Commerce, Helwan University (Class of 2022) - Major: Accounting - Grade: Good.</p>
+
+        <h2 id="skills-title"><i class="fas fa-tools"></i> Skills</h2>
         <div class="skills">
-            <span>Odoo ERP</span> <span>Comsys ERP</span> <span>MS Excel</span> <span>Financial Reporting</span>
+            <span>Odoo ERP</span> <span>Comsys ERP</span> <span>Excel</span> <span>GAAP</span> <span>Financial Reporting</span>
         </div>
     </section>
 
-    <footer>
-        <p>© 2026 تم التطوير بواسطة يوسف جمعة</p>
-    </footer>
+    <script>
+        function toggleLanguage() {
+            const body = document.getElementById('body-tag');
+            const btn = document.querySelector('.lang-switch button');
+            if (body.dir === 'rtl') {
+                body.dir = 'ltr';
+                btn.innerText = 'العربية';
+                updateContent('en');
+            } else {
+                body.dir = 'rtl';
+                btn.innerText = 'English';
+                updateContent('ar');
+            }
+        }
+
+        function updateContent(lang) {
+            const content = {
+                'ar': {
+                    'name': 'يوسف محمد جمعة',
+                    'title': 'محاسب مالي | متخصص حسابات عملاء وموردين',
+                    'about-title': 'الملخص المهني',
+                    'about-text': 'محاسب طموح يسعى لتطبيق تفانيه وموقفه الإيجابي لمساعدة الشركة في تحقيق أهدافها.',
+                    'exp-title': 'الخبرة العملية',
+                    'job1-title': 'بلو أوشين لإدارة الفنادق ومراكز الغوص',
+                    'job2-title': 'شركة وينرز للمواد الغذائية (محاسب عملاء)',
+                    'job3-title': 'منتجع بيتش سفاري نوبيان (كاشير عام ومحاسب مشتريات)',
+                    'edu-title': 'التعليم',
+                    'edu-text': 'بكالوريوس التجارة، جامعة حلوان (خريج 2022) - التخصص: محاسبة - التقدير: جيد.',
+                    'skills-title': 'المهارات التقنية'
+                },
+                'en': {
+                    'name': 'Yousef Mohamed Gomaa',
+                    'title': 'Accountant | Receivable & Payable Specialist',
+                    'about-title': 'Professional Summary',
+                    'about-text': 'A dedicated accountant seeking a position where I can apply my dedication and positive attitude to help the company achieve its goals.',
+                    'exp-title': 'Work Experience',
+                    'job1-title': 'Blue Ocean Hotel and Diving Center Management',
+                    'job2-title': 'Winners Food Supplies Company (Receivable Accountant)',
+                    'job3-title': 'Beach Safari Nubian Resort (General Cashier & Purchasing)',
+                    'edu-title': 'Education',                    
+                    'edu-text': 'Bachelor of Commerce, Helwan University (Class of 2022) - Major: Accounting - Grade: Good.',
+                    'skills-title': 'Technical Skills'
+                }
+            };
+            for (let key in content[lang]) {
+                document.getElementById(key).innerText = content[lang][key];
+            }
+            
+            // تحديث القوائم (Bullets) يدوياً للتبديل بين اللغتين
+            const lists = {
+                'ar': {
+                    'job1': ['تسجيل ومراجعة كافة معاملات الإيرادات والمدفوعات اليومية.', 'إجراء المطابقات الدورية لحسابات العملاء والموردين والبنوك.', 'متابعة الفواتير المعلقة وضمان التحصيل في الوقت المحدد.'],
+                    'job2': ['متابعة أرصدة العملاء وتسجيل كافة المعاملات (فواتير، مدفوعات).', 'تسجيل فواتير المبيعات يومياً على برامج حسابات العملاء.', 'إعداد تقارير شهرية عن فواتير المبيعات وبيانات العملاء.'],
+                    'job3': ['متابعة حركات الخزينة وتسجيل القيود المتعلقة بها.', 'إعداد القيود المحاسبية للمقبوضات والمدفوعات للموردين.', 'متابعة فواتير المشتريات والكميات المستلمة وضريبة القيمة المضافة.']
+                },
+                'en': {
+                    'job1': ['Record and review all daily revenue and payment transactions.', 'Perform periodic reconciliations for customer, vendor, and bank accounts.', 'Monitor outstanding invoices and ensure timely collections.'],
+                    'job2': ['Follow up on customer balances and record all transactions (invoices, payments).', 'Record all sales invoices daily on customer accounts programs.', 'Prepare monthly reports on sales invoices and customer data.'],
+                    'job3': ['Follow up on treasury movements and record related entries.', 'Prepare accounting entries for receivables and payments to suppliers.', 'Follow up on purchase invoices, quantities received, and VAT.']
+                }
+            };
+            
+            ['job1', 'job2', 'job3'].forEach(job => {
+                const ul = document.getElementById(job + '-list');
+                ul.innerHTML = '';
+                lists[lang][job].forEach(item => {
+                    const li = document.createElement('li');
+                    li.innerText = item;
+                    ul.appendChild(li);
+                });
+            });
+        }
+    </script>
 </body>
 </html>
