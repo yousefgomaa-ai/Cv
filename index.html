@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yousef Gomaa | Professional Accountant</title>
+    <title>Yousef Gomaa | Professional Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -21,60 +21,73 @@
         <div class="contact-info">
             <span><i class="fas fa-envelope"></i> Yousefgomaa14@gmail.com</span>
             <span><i class="fas fa-phone"></i> 01098137090</span>
-            <span><i class="fas fa-map-marker-alt"></i> Helwan, Cairo</span>
+        </div>
+        
+        <div class="nav-icons">
+            <button onclick="filterSection('all')" class="nav-btn active" id="btn-all"><i class="fas fa-th-list"></i> <span class="nav-text">All</span></button>
+            <button onclick="filterSection('summary')" class="nav-btn" id="btn-summary"><i class="fas fa-user-tie"></i> <span class="nav-text">Summary</span></button>
+            <button onclick="filterSection('exp')" class="nav-btn" id="btn-exp"><i class="fas fa-briefcase"></i> <span class="nav-text">Experience</span></button>
+            <button onclick="filterSection('skills')" class="nav-btn" id="btn-skills"><i class="fas fa-laptop-code"></i> <span class="nav-text">Skills</span></button>
+            <button onclick="filterSection('future')" class="nav-btn" id="btn-future"><i class="fas fa-rocket"></i> <span class="nav-text">Future</span></button>
         </div>
     </header>
 
     <section class="container">
-        <h2 id="about-title"><i class="fas fa-user-tie"></i> Professional Summary</h2>
-        <p id="about-text">Results-driven Accountant with 2+ years of experience in managing AR/AP cycles, bank reconciliations, and financial reporting. Expert in financial integrity and accuracy to support company growth.</p>
-
-        <h2 id="exp-title"><i class="fas fa-briefcase"></i> Work Experience</h2>
-        
-        <div class="job">
-            <h3 id="job1-title">Blue Ocean Hotel & Diving Center</h3>
-            <span id="job1-date">May 2025 - Present</span>
-            <ul id="job1-list">
-                <li>Record daily revenue and payment transactions ensuring documentation match.</li>
-                <li>Perform periodic reconciliations for customer, vendor, and bank accounts.</li>
-            </ul>
+        <div id="summary-sec" class="content-sec">
+            <h2 id="about-title"><i class="fas fa-user-tie"></i> Professional Summary</h2>
+            <p id="about-text">Results-driven Accountant with 2+ years of experience in managing AR/AP cycles, bank reconciliations, and financial reporting. Expert in financial integrity and accuracy to support company growth.</p>
         </div>
 
-        <div class="job">
-            <h3 id="job2-title">Winners Food Supplies (Receivable Accountant)</h3>
-            <span id="job2-date">Dec 2024 - April 2025</span>
-            <ul id="job2-list">
-                <li>Managed customer balances and recorded daily sales invoices.</li>
-                <li>Prepared monthly reports on sales invoices and collections.</li>
-            </ul>
+        <div id="exp-sec" class="content-sec">
+            <h2 id="exp-title"><i class="fas fa-briefcase"></i> Work Experience</h2>
+            <div class="job">
+                <h3 id="job1-title">Blue Ocean Hotel & Diving Center</h3>
+                <span id="job1-date">May 2025 - Present</span>
+                <ul id="job1-list">
+                    <li>Record and review all daily revenue and payment transactions.</li>
+                    <li>Perform periodic reconciliations for customer, vendor, and bank accounts.</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h3 id="job2-title">Winners Food Supplies (Receivable Accountant)</h3>
+                <span id="job2-date">Dec 2024 - April 2025</span>
+                <ul id="job2-list">
+                    <li>Managed customer balances and recorded daily sales invoices.</li>
+                    <li>Prepared monthly reports on sales invoices and collections.</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h3 id="job3-title">Beach Safari Nubian Resort (General Cashier & Purchasing)</h3>
+                <span id="job3-date">Jun 2024 - Nov 2024</span>
+                <ul id="job3-list">
+                    <li>Followed up on daily treasury movements and journal entries.</li>
+                    <li>Monitored purchase invoices and managed VAT for purchases.</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="job">
-            <h3 id="job3-title">Beach Safari Nubian Resort (General Cashier & Purchasing)</h3>
-            <span id="job3-date">Jun 2024 - Nov 2024</span>
-            <ul id="job3-list">
-                <li>Followed up on daily treasury movements and recorded journal entries.</li>
-                <li>Monitored purchase invoices and managed VAT for purchases.</li>
-            </ul>
+        <div id="skills-sec" class="content-sec">
+            <h2 id="skills-title"><i class="fas fa-laptop-code"></i> Technical Toolbox (ERP & Office)</h2>
+            <div class="skills">
+                <span><i class="fas fa-network-wired"></i> Odoo ERP</span>
+                <span><i class="fas fa-database"></i> Comsys ERP</span>
+                <span><i class="fas fa-file-excel"></i> MS Excel (Advanced)</span>
+                <span><i class="fas fa-file-word"></i> MS Office Suite</span>
+            </div>
+            <h2 id="lang-title"><i class="fas fa-language"></i> Languages</h2>
+            <div class="skills" id="lang-list">
+                <span>Arabic (Native)</span> <span>English (Good)</span> <span>Italian (Learning)</span> <span>German (Learning)</span>
+            </div>
         </div>
 
-        <h2 id="skills-title"><i class="fas fa-laptop-code"></i> Technical Toolbox (ERP & Office)</h2>
-        <div class="skills">
-            <span><i class="fas fa-network-wired"></i> Odoo ERP</span>
-            <span><i class="fas fa-database"></i> Comsys ERP</span>
-            <span><i class="fas fa-file-excel"></i> MS Excel (Advanced)</span>
-            <span><i class="fas fa-file-word"></i> MS Office Suite</span>
+        <div id="future-sec" class="content-sec">
+            <h2 id="future-title"><i class="fas fa-rocket"></i> Future Plans</h2>
+            <p id="future-text">Currently preparing for CMA (Certified Management Accountant) and IFRS certifications to master international financial reporting standards and management accounting.</p>
         </div>
 
-        <h2 id="future-title"><i class="fas fa-rocket"></i> Future Plans</h2>
-        <p id="future-text">Currently preparing for CMA (Certified Management Accountant) and IFRS certifications to master international financial reporting standards.</p>
-
-        <h2 id="edu-title"><i class="fas fa-graduation-cap"></i> Education</h2>
-        <p id="edu-text">Bachelor of Commerce, Helwan University (Class of 2022) - Major: Accounting - Grade: Good.</p>
-
-        <h2 id="lang-title"><i class="fas fa-language"></i> Languages</h2>
-        <div class="skills" id="lang-list">
-            <span>Arabic (Native)</span> <span>English (Good)</span> <span>Italian (Learning)</span> <span>German (Learning)</span>
+        <div id="edu-sec" class="content-sec">
+            <h2 id="edu-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+            <p id="edu-text">Bachelor of Commerce, Helwan University (Class of 2022) - Major: Accounting - Grade: Good.</p>
         </div>
     </section>
 
@@ -83,17 +96,45 @@
     </footer>
 
     <script>
+        // وظيفة التصفية (Filtering)
+        function filterSection(sectionId) {
+            const sections = document.querySelectorAll('.content-sec');
+            sections.forEach(sec => sec.classList.remove('active-sec'));
+            
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            if (sectionId === 'all') {
+                sections.forEach(sec => sec.classList.add('active-sec'));
+                document.getElementById('btn-all').classList.add('active');
+            } else {
+                document.getElementById(sectionId + '-sec').classList.add('active-sec');
+                document.getElementById('btn-' + sectionId).classList.add('active');
+            }
+        }
+
+        // تشغيل وضع "الكل" عند فتح الموقع
+        window.onload = () => { filterSection('all'); };
+
+        // وظيفة الترجمة
         function toggleLanguage() {
             const body = document.getElementById('body-tag');
             const btnSpan = document.querySelector('.lang-switch button span');
+            const navTexts = {
+                'en': ['All', 'Summary', 'Experience', 'Skills', 'Future'],
+                'ar': ['الكل', 'الملخص', 'الخبرة', 'المهارات', 'الطموح']
+            };
+            const navButtons = document.querySelectorAll('.nav-text');
             
             if (body.dir === 'rtl') {
                 body.dir = 'ltr';
                 btnSpan.innerText = 'العربية';
+                navButtons.forEach((span, i) => span.innerText = navTexts['en'][i]);
                 updateContent('en');
             } else {
                 body.dir = 'rtl';
                 btnSpan.innerText = 'English';
+                navButtons.forEach((span, i) => span.innerText = navTexts['ar'][i]);
                 updateContent('ar');
             }
         }
@@ -101,41 +142,24 @@
         function updateContent(lang) {
             const content = {
                 'ar': {
-                    'name': 'يوسف محمد جمعة',
-                    'title': 'محاسب مالي محترف | متخصص حسابات العملاء والموردين',
-                    'about-title': 'الملخص المهني',
-                    'about-text': 'محاسب مالي دقيق بخبرة تزيد عن عامين في إدارة دورات الحسابات المدينة والدائنة، والتسويات البنكية. ملتزم بأعلى معايير الدقة والنزاهة المالية لدعم نمو الشركة.',
-                    'exp-title': 'الخبرة العملية',
-                    'job1-title': 'شركة بلو أوشين لإدارة الفنادق ومراكز الغوص',
-                    'job2-title': 'شركة وينرز للمواد الغذائية (محاسب عملاء)',
-                    'job3-title': 'منتجع بيتش سفاري نوبيان (كاشير عام ومشتريات)',
-                    'skills-title': 'الأدوات التقنية (ERP و Office)',
-                    'future-title': 'الخطط المستقبلية',
-                    'future-text': 'أعمل حالياً على التحضير لشهادة المحاسب الإداري المعتمد (CMA) ومعايير التقارير المالية الدولية (IFRS) لتعزيز خبرتي المهنية.',
-                    'edu-title': 'التعليم',
-                    'edu-text': 'بكالوريوس التجارة، جامعة حلوان (دفعة 2022) - التخصص: محاسبة - التقدير: جيد.',
-                    'lang-title': 'اللغات',
+                    'name': 'يوسف محمد جمعة', 'title': 'محاسب مالي محترف | متخصص حسابات',
+                    'about-title': 'الملخص المهني', 'exp-title': 'الخبرة العملية',
+                    'skills-title': 'الأدوات التقنية (ERP & Office)', 'future-title': 'الخطط المستقبلية',
+                    'edu-title': 'التعليم', 'lang-title': 'اللغات',
+                    'about-text': 'محاسب مالي دقيق بخبرة تزيد عن عامين في إدارة الحسابات والتسويات المالية.',
+                    'future-text': 'أعمل حالياً على التحضير لشهادة CMA و IFRS لتعزيز خبرتي المهنية الدولية.',
                     'footer-text': '© 2026 تم التطوير بواسطة يوسف جمعة'
                 },
                 'en': {
-                    'name': 'Yousef Mohamed Gomaa',
-                    'title': 'Professional Accountant | AR & AP Specialist',
-                    'about-title': 'Professional Summary',
-                    'about-text': 'Results-driven Accountant with 2+ years of experience in managing AR/AP cycles, bank reconciliations, and financial reporting. Expert in financial integrity and accuracy to support company growth.',
-                    'exp-title': 'Work Experience',
-                    'job1-title': 'Blue Ocean Hotel & Diving Center',
-                    'job2-title': 'Winners Food Supplies (Receivable Accountant)',
-                    'job3-title': 'Beach Safari Nubian Resort (General Cashier & Purchasing)',
-                    'skills-title': 'Technical Toolbox (ERP & Office)',
-                    'future-title': 'Future Plans',
-                    'future-text': 'Currently preparing for CMA (Certified Management Accountant) and IFRS certifications to master international financial reporting standards.',
-                    'edu-title': 'Education',
-                    'edu-text': 'Bachelor of Commerce, Helwan University (Class of 2022) - Major: Accounting - Grade: Good.',
-                    'lang-title': 'Languages',
+                    'name': 'Yousef Mohamed Gomaa', 'title': 'Professional Accountant | AR & AP Specialist',
+                    'about-title': 'Professional Summary', 'exp-title': 'Work Experience',
+                    'skills-title': 'Technical Toolbox (ERP & Office)', 'future-title': 'Future Plans',
+                    'edu-title': 'Education', 'lang-title': 'Languages',
+                    'about-text': 'Results-driven Accountant with 2+ years of experience in managing AR/AP cycles and financial reporting.',
+                    'future-text': 'Currently preparing for CMA and IFRS certifications to master international financial reporting.',
                     'footer-text': '© 2026 Developed by Yousef Gomaa'
                 }
             };
-
             for (let key in content[lang]) {
                 const el = document.getElementById(key);
                 if(el) el.innerText = content[lang][key];
