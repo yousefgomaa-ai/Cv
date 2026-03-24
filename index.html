@@ -33,6 +33,9 @@
                     <span><i class="fas fa-envelope"></i> Yousefgomaa14@gmail.com</span>
                     <span><i class="fas fa-phone"></i> 01098137090</span>
                     <span id="location-text"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</span>
+                    <a href="https://www.linkedin.com/in/yousef-gomaa1" target="_blank" style="color: white; text-decoration: none; display: block; margin-top: 5px;">
+                        <i class="fab fa-linkedin"></i> linkedin.com/in/yousef-gomaa1
+                    </a>
                 </div>
             </div>
             <div class="profile-image-area">
@@ -45,75 +48,61 @@
             <button onclick="filterSection('summary')" class="nav-btn" id="btn-summary"><i class="fas fa-user-tie"></i> <span class="nav-text">Summary</span></button>
             <button onclick="filterSection('exp')" class="nav-btn" id="btn-exp"><i class="fas fa-briefcase"></i> <span class="nav-text">Experience</span></button>
             <button onclick="filterSection('skills')" class="nav-btn" id="btn-skills"><i class="fas fa-laptop-code"></i> <span class="nav-text">Skills</span></button>
+            <button onclick="filterSection('future')" class="nav-btn" id="btn-future"><i class="fas fa-rocket"></i> <span class="nav-text">Future</span></button>
         </div>
     </header>
 
     <section class="container">
         <div id="summary-sec" class="content-sec">
             <h2 id="about-title"><i class="fas fa-user-tie"></i> Professional Summary</h2>
-            <p id="about-text">Dedicated Accountant with extensive experience in Treasury, Accounts Payable (AP), and Accounts Receivable (AR). Proficient in managing financial transactions and bank reconciliations while applying IFRS-based accounting principles to ensure accurate reporting. Skilled in utilizing Odoo and Comsys ERP systems to streamline financial workflows.</p>
+            <p id="about-text">Dedicated Accountant with 2+ years of experience in Treasury, AP, and AR. Skilled in Odoo and Comsys ERP, ensuring IFRS compliance and accurate financial reporting.</p>
         </div>
 
         <div id="exp-sec" class="content-sec">
             <h2 id="exp-title"><i class="fas fa-briefcase"></i> Work Experience</h2>
-            
             <div class="job">
-                <h3 id="job1-title">Blue Ocean Hotel and Diving Center Management</h3>
+                <h3 id="job1-title">Blue Ocean Hotel & Diving Center</h3>
                 <span class="job-date" id="job1-date">May 2025 - Feb 2026</span>
                 <ul id="job1-list">
-                    <li>Record and review all daily revenue and payment transactions.</li>
-                    <li>Perform periodic reconciliations for customer, vendor, and bank accounts.</li>
-                    <li>Monitor outstanding invoices and ensure timely collections.</li>
-                    <li>Maintain financial records according to company policies and accounting standards.</li>
+                    <li>Recording daily revenue and payment transactions.</li>
+                    <li>Bank, customer, and vendor reconciliations.</li>
                 </ul>
             </div>
-
             <div class="job">
-                <h3 id="job2-title">Winners Food Supplies Company (AR & AP)</h3>
+                <h3 id="job2-title">Winners Food Supplies (AR & AP)</h3>
                 <span class="job-date" id="job2-date">Dec 2024 - April 2025</span>
                 <ul id="job2-list">
-                    <li>Follow up on customer balances and record all transactions (invoices, payments, settlements).</li>
-                    <li>Recording all sales invoices daily on customer accounts programs.</li>
-                    <li>Preparing monthly reports on sales invoices.</li>
+                    <li>Managing balances and recording daily sales invoices.</li>
                 </ul>
             </div>
-
             <div class="job">
-                <h3 id="job3-title">Beach Safari Nubian Resort (Treasury & Purchasing)</h3>
+                <h3 id="job3-title">Beach Safari Resort (Treasury & Purchasing)</h3>
                 <span class="job-date" id="job3-date">Jun 2024 - Nov 2024</span>
                 <ul id="job3-list">
-                    <li>Monitoring daily treasury movements and recording related entries.</li>
-                    <li>Disbursing cash amounts according to the disbursement plan.</li>
-                    <li>Preparing accounting entries for receivables and payments to suppliers.</li>
-                    <li>Following up on purchase invoices and quantity matching.</li>
+                    <li>Monitoring treasury movements and managing disbursement plans.</li>
                 </ul>
             </div>
         </div>
 
         <div id="skills-sec" class="content-sec">
-            <h2 id="skills-title"><i class="fas fa-laptop-code"></i> Professional Skills</h2>
+            <h2 id="skills-title"><i class="fas fa-laptop-code"></i> Technical Toolbox</h2>
             <div class="skills">
                 <span>Odoo ERP</span>
                 <span>Comsys ERP</span>
-                <span>MS Excel (PivotTables, Vlookup, Xlookup)</span>
-                <span>IFRS Principles</span>
-                <span>Bank Reconciliations</span>
+                <span>Excel (Vlookup/Pivot)</span>
+                <span>IFRS</span>
             </div>
-            
             <h2 id="personal-skills-title"><i class="fas fa-users"></i> Personal Skills</h2>
             <div class="skills">
                 <span id="skill-lead">Leadership</span>
                 <span id="skill-comm">Communication</span>
-                <span id="skill-neg">Negotiation</span>
                 <span id="skill-team">Teamwork</span>
-                <span id="skill-crit">Critical Thinking</span>
             </div>
+        </div>
 
-            <h2 id="lang-title"><i class="fas fa-language"></i> Languages</h2>
-            <div class="skills">
-                <span id="lang-ar">Arabic (Native)</span>
-                <span id="lang-en">English (Good)</span>
-            </div>
+        <div id="future-sec" class="content-sec">
+            <h2 id="future-title"><i class="fas fa-rocket"></i> Future Plans</h2>
+            <p id="future-text">Preparing for CMA and IFRS certifications to master international standards.</p>
         </div>
 
         <div id="edu-sec" class="content-sec">
@@ -148,8 +137,8 @@
             const btnSpan = document.querySelector('.lang-switch button span');
             const navButtons = document.querySelectorAll('.nav-text');
             const navTexts = {
-                'en': ['All', 'Summary', 'Experience', 'Skills'],
-                'ar': ['الكل', 'الملخص', 'الخبرة', 'المهارات']
+                'en': ['All', 'Summary', 'Experience', 'Skills', 'Future'],
+                'ar': ['الكل', 'الملخص', 'الخبرة', 'المهارات', 'الطموح']
             };
             if (body.dir === 'rtl') {
                 body.dir = 'ltr';
@@ -169,47 +158,43 @@
                 'ar': {
                     'name': 'يوسف محمد جمعة',
                     'title': 'محاسب خزينة | متخصص حسابات العملاء والموردين',
+                    'location-text': 'القاهرة، مصر',
                     'about-title': 'الملخص المهني',
-                    'about-text': 'محاسب مخصص ذو خبرة واسعة في الخزانة وحسابات الدائنين والمدينين. متمكن من إدارة المعاملات المالية والتسويات البنكية مع تطبيق معايير IFRS لضمان دقة التقارير.',
+                    'about-text': 'محاسب ذو خبرة تزيد عن عامين في الخزانة وحسابات الدائنين والمدينين. متمكن من Odoo و Comsys ERP مع تطبيق معايير IFRS.',
                     'exp-title': 'الخبرة العملية',
-                    'job1-title': 'بلو أوشين لإدارة الفنادق ومراكز الغوص',
-                    'job2-title': 'شركة وينرز للمواد الغذائية (حسابات العملاء والموردين)',
-                    'job3-title': 'منتجع بيتش سفاري نوبيان (الخزينة والمشتريات)',
-                    'skills-title': 'المهارات المهنية',
+                    'job1-title': 'بلو أوشين لإدارة الفنادق',
+                    'job2-title': 'شركة وينرز للمواد الغذائية',
+                    'job3-title': 'منتجع بيتش سفاري نوبيان',
+                    'skills-title': 'الأدوات التقنية',
                     'personal-skills-title': 'المهارات الشخصية',
                     'skill-lead': 'القيادة',
                     'skill-comm': 'التواصل',
-                    'skill-neg': 'التفاوض',
                     'skill-team': 'العمل الجماعي',
-                    'skill-crit': 'التفكير النقدي',
+                    'future-title': 'الخطط المستقبلية',
+                    'future-text': 'التحضير لشهادات CMA و IFRS الدولية.',
                     'edu-title': 'التعليم',
-                    'edu-text': 'بكالوريوس التجارة، جامعة حلوان (دفرة 2022) - التقدير: جيد.',
-                    'lang-title': 'اللغات',
-                    'lang-ar': 'العربية (اللغة الأم)',
-                    'lang-en': 'الإنجليزية (جيد)',
+                    'edu-text': 'بكالوريوس التجارة، جامعة حلوان (2022) - التخصص: محاسبة - التقدير: جيد.',
                     'footer-text': '© 2026 تم التطوير بواسطة يوسف جمعة'
                 },
                 'en': {
                     'name': 'Yousef Mohamed Gomaa',
                     'title': 'Treasury Accountant | AR & AP Specialist',
+                    'location-text': 'Cairo, Egypt',
                     'about-title': 'Professional Summary',
-                    'about-text': 'Dedicated Accountant with extensive experience in Treasury, AP, and AR. Proficient in managing financial transactions and bank reconciliations while applying IFRS-based accounting principles.',
+                    'about-text': 'Dedicated Accountant with 2+ years of experience in Treasury, AP, and AR. Skilled in Odoo and Comsys ERP.',
                     'exp-title': 'Work Experience',
-                    'job1-title': 'Blue Ocean Hotel and Diving Center Management',
-                    'job2-title': 'Winners Food Supplies Company (AR & AP)',
-                    'job3-title': 'Beach Safari Nubian Resort (Treasury & Purchasing)',
-                    'skills-title': 'Professional Skills',
+                    'job1-title': 'Blue Ocean Hotel & Diving Center',
+                    'job2-title': 'Winners Food Supplies (AR & AP)',
+                    'job3-title': 'Beach Safari Resort (Treasury & Purchasing)',
+                    'skills-title': 'Technical Toolbox',
                     'personal-skills-title': 'Personal Skills',
                     'skill-lead': 'Leadership',
                     'skill-comm': 'Communication',
-                    'skill-neg': 'Negotiation',
                     'skill-team': 'Teamwork',
-                    'skill-crit': 'Critical Thinking',
+                    'future-title': 'Future Plans',
+                    'future-text': 'Preparing for CMA and IFRS certifications.',
                     'edu-title': 'Education',
                     'edu-text': 'Bachelor of Commerce, Helwan University (Class of 2022) - Grade: Good.',
-                    'lang-title': 'Languages',
-                    'lang-ar': 'Arabic (Native)',
-                    'lang-en': 'English (Good)',
                     'footer-text': '© 2026 Developed by Yousef Gomaa'
                 }
             };
