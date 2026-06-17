@@ -33,7 +33,7 @@
                     <span><i class="fas fa-envelope"></i> Yousefgomaa14@gmail.com</span>
                     <span><i class="fas fa-phone"></i> 01098137090</span>
                     <span id="location-text"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</span>
-                    <a href="https://www.linkedin.com/in/yousef-gomaa1" target="_blank" style="color: white; text-decoration: none; display: block; margin-top: 5px;">
+                    <a href="https://www.linkedin.com/in/yousef-gomaa1" target="_blank">
                         <i class="fab fa-linkedin"></i> linkedin.com/in/yousef-gomaa1
                     </a>
                 </div>
@@ -149,21 +149,17 @@
 
     <script>
         function filterSection(sectionId) {
-            // تحديد جميع الأقسام التي يتم التحكم في ظهورها وإخفائها
             const sections = document.querySelectorAll('.content-sec');
             
-            // إخفاء كافة الأقسام مؤقتاً ما عدا قسم التعليم (edu-sec) ليبقى ثابتاً بالأسفل بشكل احترافي
             sections.forEach(sec => {
                 if (sec.id !== 'edu-sec') {
                     sec.style.display = 'none';
                 }
             });
 
-            // إزالة الكلاس النشط من جميع الأزرار لتحديث مظهرها
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
 
-            // التحكم في الإظهار بناءً على الزر المضغوط بدون التسبب في أي توقف برمي
             if (sectionId === 'all') {
                 sections.forEach(sec => sec.style.display = 'block');
                 const btnAll = document.getElementById('btn-all');
@@ -189,11 +185,13 @@
             };
             if (body.dir === 'rtl') {
                 body.dir = 'ltr';
+                body.setAttribute('dir', 'ltr');
                 btnSpan.innerText = 'العربية';
                 navButtons.forEach((span, i) => span.innerText = navTexts['en'][i]);
                 updateContent('en');
             } else {
                 body.dir = 'rtl';
+                body.setAttribute('dir', 'rtl');
                 btnSpan.innerText = 'English';
                 navButtons.forEach((span, i) => span.innerText = navTexts['ar'][i]);
                 updateContent('ar');
@@ -249,7 +247,6 @@
                     'job2-date': 'Dec 2024 - April 2025',
                     'job2-list': '<li>Follow up on customer balances and record all transactions.</li><li>Recording all sales invoices daily on customer accounts programs.</li><li>Preparing monthly reports on sales invoices.</li>',
                     'job3-title': 'Beach Safari Nubian Resort (Treasury Accountant & Purchasing)',
-                    'job3-date': 'Jun 2024 - Nov 2024',
                     'job3-list': '<li>Monitoring daily treasury movements and recording related entries.</li><li>Disbursing cash amounts according to the disbursement plan.</li><li>Preparing accounting entries for receivables and payments to suppliers.</li><li>Following up on purchase invoices and quantity matching.</li>',
                     'skills-title': 'Technical Toolbox',
                     'personal-skills-title': 'Personal Skills',
