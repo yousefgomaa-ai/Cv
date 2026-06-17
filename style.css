@@ -1,10 +1,10 @@
 /* إعدادات متقدمة لتأثيرات الزجاج والمودرن نيون */
 :root {
-    --bg-main: #060413;       /* الخلفية الليلية العميقة جداً */
-    --card-glass: rgba(15, 11, 42, 0.45); /* الزجاج الشفاف المائل للبنفسجي */
+    --bg-main: #060413;       
+    --card-glass: rgba(15, 11, 42, 0.45); 
     --card-hover: rgba(26, 20, 68, 0.6);
-    --neon-purple: #a855f7;    /* النيون البنفسجي */
-    --neon-indigo: #6366f1;    /* النيون الإنديغو الأزرق */
+    --neon-purple: #a855f7;    
+    --neon-indigo: #6366f1;    
     --text-pure: #ffffff;
     --text-glow: #e9d5ff;
     --text-dim: #9ca3af;
@@ -27,17 +27,17 @@ body {
     position: relative;
 }
 
-/* تأثير الإضاءة النيون الكبيرة الخلفية (الموجودة في صلب الصورة) */
+/* تأثير الإضاءة النيون الكبيرة الخلفية */
 body::before, body::after {
     content: '';
     position: fixed;
-    width: 450px;
-    height: 450px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     pointer-events: none;
     z-index: -1;
-    filter: blur(140px);
-    opacity: 0.4;
+    filter: blur(100px);
+    opacity: 0.35;
 }
 body::before {
     top: -10%;
@@ -50,57 +50,77 @@ body::after {
     background: var(--neon-purple);
 }
 
+@media (min-width: 768px) {
+    body::before, body::after {
+        width: 450px;
+        height: 450px;
+        filter: blur(140px);
+    }
+}
+
 /* زر تغيير اللغة الزجاجي */
 .lang-switch {
-    position: fixed;
-    top: 30px;
-    right: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
     z-index: 1000;
 }
 body[dir="rtl"] .lang-switch {
     right: auto;
-    left: 30px;
+    left: 20px;
 }
 .lang-switch button {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.05);
     color: var(--text-pure);
     border: 1px solid var(--border-glass);
-    padding: 12px 24px;
+    padding: 8px 16px;
     border-radius: 50px;
     cursor: pointer;
     font-weight: 600;
+    font-size: 0.85rem;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 .lang-switch button:hover {
     border-color: var(--neon-purple);
     background: rgba(168, 85, 247, 0.1);
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
 }
 
-/* الهيدر الإبداعي - الـ Hero Section المأخوذ من صلب التصميم */
+/* الهيدر الإبداعي */
 header {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 100px 20px 40px 20px;
+    padding: 80px 15px 20px 15px;
 }
 
 .header-container {
     display: flex;
-    flex-direction: column-reverse; /* الصورة تظهر فوق في الموبايل بشكل أشيك */
+    flex-direction: column-reverse; 
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
+    gap: 30px;
+    background: var(--card-glass);
+    padding: 25px;
+    border-radius: 24px;
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    text-align: center;
 }
 
 @media (min-width: 768px) {
+    header {
+        padding: 100px 20px 40px 20px;
+    }
     .header-container {
         flex-direction: row;
         text-align: left;
+        padding: 40px;
     }
     body[dir="rtl"] .header-container {
         text-align: right;
@@ -109,42 +129,80 @@ header {
 
 /* النصوص الكبيرة الجريئة الجاذبة للعين */
 .profile-text h1 {
-    font-size: 3.5rem;
+    font-size: 2.2rem;
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.2;
     margin-bottom: 15px;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
     background: linear-gradient(135deg, #ffffff 30%, #c084fc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.profile-text p {
-    font-size: 1.5rem;
-    color: var(--text-dim);
-    font-weight: 400;
-    margin-bottom: 35px;
+@media (min-width: 768px) {
+    .profile-text h1 {
+        font-size: 3.5rem;
+        line-height: 1.1;
+        letter-spacing: -1px;
+    }
 }
 
-/* أزرار الاتصال كأنها كبسولات بداخل الـ Figma */
+.profile-text p {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+@media (min-width: 768px) {
+    .profile-text p {
+        font-size: 1.5rem;
+    }
+}
+
+/* أزرار الاتصال كبسولات الـ Figma */
 .contact-info {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+@media (min-width: 480px) {
+    .contact-info {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .contact-info {
+        justify-content: flex-start;
+        gap: 15px;
+    }
 }
 
 .contact-info span, .contact-info a {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-glass);
-    padding: 12px 22px;
-    border-radius: 16px;
-    font-size: 0.95rem;
+    padding: 10px 16px;
+    border-radius: 14px;
+    font-size: 0.85rem;
     color: var(--text-glow);
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .contact-info span, .contact-info a {
+        padding: 12px 22px;
+        font-size: 0.95rem;
+    }
 }
 
 .contact-info a:hover {
@@ -161,63 +219,106 @@ header {
 .profile-image-area::before {
     content: '';
     position: absolute;
-    top: -15px;
-    left: -15px;
-    right: -15px;
-    bottom: -15px;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
     background: linear-gradient(135deg, var(--neon-indigo), var(--neon-purple));
-    border-radius: 35px;
+    border-radius: 28px;
     z-index: -1;
-    filter: blur(25px);
+    filter: blur(15px);
     opacity: 0.5;
 }
 
+@media (min-width: 768px) {
+    .profile-image-area::before {
+        top: -15px;
+        left: -15px;
+        right: -15px;
+        bottom: -15px;
+        border-radius: 35px;
+        filter: blur(25px);
+    }
+}
+
 .profile-image-area img {
-    width: 220px;
-    height: 220px;
-    border-radius: 30px;
+    width: 140px;
+    height: 140px;
+    border-radius: 24px;
     object-fit: cover;
     border: 2px solid rgba(255, 255, 255, 0.1);
-    transform: rotate(-2deg); /* حركة التفاف كرييتف خفيفة */
     transition: all 0.4s ease;
 }
-.profile-image-area:hover img {
-    transform: rotate(0deg) scale(1.03);
+
+@media (min-width: 768px) {
+    .profile-image-area img {
+        width: 220px;
+        height: 220px;
+        border-radius: 30px;
+        transform: rotate(-2deg);
+    }
+    .profile-image-area:hover img {
+        transform: rotate(0deg) scale(1.03);
+    }
 }
 
 /* شريط التبويبات الفخم الـ Floating Navbar */
 .nav-icons {
     max-width: 680px;
-    margin: 60px auto;
-    background: rgba(8, 5, 26, 0.7);
-    padding: 8px;
-    border-radius: 20px;
+    margin: 30px auto;
+    background: rgba(8, 5, 26, 0.85);
+    padding: 6px;
+    border-radius: 16px;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
     border: 1px solid var(--border-glass);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
+@media (min-width: 768px) {
+    .nav-icons {
+        margin: 60px auto;
+        border-radius: 20px;
+        justify-content: space-between;
+        gap: 0;
+        padding: 8px;
+    }
+}
+
 .nav-btn {
     background: transparent;
     border: none;
-    padding: 14px 28px;
-    border-radius: 14px;
+    padding: 10px 16px;
+    border-radius: 10px;
     cursor: pointer;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--text-dim);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     transition: all 0.3s ease;
+    flex: 1 1 calc(33.33% - 8px); /* توزيع ذكي في الموبايل */
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .nav-btn {
+        padding: 14px 28px;
+        border-radius: 14px;
+        font-size: 0.95rem;
+        gap: 8px;
+        flex: none;
+    }
 }
 
 .nav-btn.active, .nav-btn:hover {
     background: linear-gradient(135deg, var(--neon-indigo) 0%, var(--neon-purple) 100%);
-    color: #white;
+    color: #fff;
     box-shadow: 0 10px 25px rgba(168, 85, 247, 0.4);
     transform: translateY(-2px);
 }
@@ -225,37 +326,62 @@ header {
 /* حاوية الأقسام الرئيسية */
 .container {
     max-width: 1100px;
-    margin: 0 auto 100px auto;
-    padding: 0 20px;
+    margin: 0 auto 60px auto;
+    padding: 0 15px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 20px;
+        margin-bottom: 100px;
+    }
 }
 
 /* بطاقات الكانفاس الزجاجية الكبيرة */
 .content-sec {
     background: var(--card-glass);
-    padding: 50px;
-    border-radius: 32px;
+    padding: 25px 20px;
+    border-radius: 24px;
     border: 1px solid var(--border-glass);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    margin-bottom: 40px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+    margin-bottom: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     animation: slideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+@media (min-width: 768px) {
+    .content-sec {
+        padding: 50px;
+        border-radius: 32px;
+        margin-bottom: 40px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+    }
+}
+
 @keyframes slideUp {
-    from { opacity: 0; transform: translateY(40px); }
+    from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 h2 {
     color: #fff;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
+
+@media (min-width: 768px) {
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 35px;
+        gap: 15px;
+    }
+}
+
 h2 i {
     background: linear-gradient(135deg, var(--neon-indigo), var(--neon-purple));
     -webkit-background-clip: text;
@@ -263,104 +389,35 @@ h2 i {
 }
 
 #about-text, #future-text, #edu-text {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: #d1d5db;
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
-/* تصميم تجربة العمل كبطاقات نيون مستقلة (المعروضة بالصورة) */
+@media (min-width: 768px) {
+    #about-text, #future-text, #edu-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+}
+
+/* بطاقات تجربة العمل المستقلة */
 .job {
     background: rgba(255, 255, 255, 0.01);
     border: 1px solid rgba(255, 255, 255, 0.03);
-    padding: 35px;
-    border-radius: 24px;
-    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+    .job {
+        padding: 35px;
+        border-radius: 24px;
+        margin-bottom: 30px;
+    }
 }
 
 .job:hover {
     background: var(--card-hover);
-    border-color: var(--border-glow);
-    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.1);
-    transform: translateY(-4px);
-}
-
-.job h3 {
-    font-size: 1.4rem;
-    color: #fff;
-    font-weight: 600;
-}
-
-.job-date {
-    display: inline-block;
-    font-size: 0.9rem;
-    color: #c084fc;
-    background: rgba(168, 85, 247, 0.12);
-    padding: 6px 16px;
-    border-radius: 12px;
-    margin: 10px 0 25px 0;
-    font-weight: 600;
-    border: 1px solid rgba(168, 85, 247, 0.2);
-}
-
-.job ul {
-    list-style: none;
-}
-
-.job ul li {
-    margin-bottom: 12px;
-    position: relative;
-    padding-left: 25px;
-    font-size: 1rem;
-    color: #e5e7eb;
-}
-body[dir="rtl"] .job ul li {
-    padding-left: 0;
-    padding-right: 25px;
-}
-
-.job ul li::before {
-    content: "✦"; /* رمز النجمة المضيئة الكرييتف */
-    color: var(--neon-purple);
-    position: absolute;
-    left: 0;
-    font-size: 0.9rem;
-}
-body[dir="rtl"] .job ul li::before {
-    left: auto;
-    right: 0;
-}
-
-/* كبسولات المهارات اللامعة والمتحركة */
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-bottom: 40px;
-}
-
-.skills span {
-    background: rgba(255, 255, 255, 0.02);
-    color: #f3f4f6;
-    padding: 12px 24px;
-    border-radius: 16px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
-}
-
-.skills span:hover {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(168, 85, 247, 0.25) 100%);
-    border-color: var(--neon-indigo);
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
-    transform: scale(1.05) translateY(-2px);
-}
-
-footer {
-    text-align: center;
-    padding: 60px 20px;
-    color: var(--text-dim);
-    font-size: 0.95rem;
-    border-top: 1px solid var(--border-glass);
-}
