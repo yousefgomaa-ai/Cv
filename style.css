@@ -1,303 +1,366 @@
-/* إعدادات الألوان المستوحاة من Figma المودرن */
+/* إعدادات متقدمة لتأثيرات الزجاج والمودرن نيون */
 :root {
-    --bg-dark: #0b071e; /* البنفسجي الليلي الغامق جداً */
-    --card-bg: rgba(23, 16, 49, 0.7); /* خلفية البطاقات الشفافة */
-    --accent-glow: #6366f1; /* النيون المضيء - أزرق بنفسجي */
-    --text-main: #f3f4f6; /* الأبيض المريح للعين */
-    --text-muted: #9ca3af; /* الرمادي للنصوص الثانوية */
-    --border-color: rgba(99, 102, 241, 0.2); /* حدود مضيئة خفيفة */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --bg-main: #060413;       /* الخلفية الليلية العميقة جداً */
+    --card-glass: rgba(15, 11, 42, 0.45); /* الزجاج الشفاف المائل للبنفسجي */
+    --card-hover: rgba(26, 20, 68, 0.6);
+    --neon-purple: #a855f7;    /* النيون البنفسجي */
+    --neon-indigo: #6366f1;    /* النيون الإنديغو الأزرق */
+    --text-pure: #ffffff;
+    --text-glow: #e9d5ff;
+    --text-dim: #9ca3af;
+    --border-glass: rgba(168, 85, 247, 0.15);
+    --border-glow: rgba(99, 102, 241, 0.4);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    line-height: 1.7;
+    background-color: var(--bg-main);
+    color: var(--text-pure);
+    line-height: 1.6;
     overflow-x: hidden;
-    /* تأثير الإضاءة الخلفية اللي في الصورة */
-    background-image: 
-        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 40%);
-    background-attachment: fixed;
+    position: relative;
 }
 
-/* زر تغيير اللغة الذكي */
+/* تأثير الإضاءة النيون الكبيرة الخلفية (الموجودة في صلب الصورة) */
+body::before, body::after {
+    content: '';
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(140px);
+    opacity: 0.4;
+}
+body::before {
+    top: -10%;
+    left: -10%;
+    background: var(--neon-indigo);
+}
+body::after {
+    bottom: 10%;
+    right: -5%;
+    background: var(--neon-purple);
+}
+
+/* زر تغيير اللغة الزجاجي */
 .lang-switch {
     position: fixed;
-    top: 25px;
-    right: 25px;
+    top: 30px;
+    right: 30px;
     z-index: 1000;
 }
 body[dir="rtl"] .lang-switch {
     right: auto;
-    left: 25px;
+    left: 30px;
 }
-
 .lang-switch button {
-    background: var(--card-bg);
-    color: var(--text-main);
-    border: 1px solid var(--border-color);
-    padding: 10px 20px;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-pure);
+    border: 1px solid var(--border-glass);
+    padding: 12px 24px;
+    border-radius: 50px;
     cursor: pointer;
     font-weight: 600;
-    backdrop-filter: blur(10px);
-    transition: var(--transition-smooth);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
-
 .lang-switch button:hover {
-    border-color: #a855f7;
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
-    transform: translateY(-2px);
+    border-color: var(--neon-purple);
+    background: rgba(168, 85, 247, 0.1);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
 }
 
-/* الهيدر العصري المفتوح */
+/* الهيدر الإبداعي - الـ Hero Section المأخوذ من صلب التصميم */
 header {
-    padding: 80px 20px 20px 20px;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 100px 20px 40px 20px;
 }
 
 .header-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse; /* الصورة تظهر فوق في الموبايل بشكل أشيك */
     align-items: center;
-    gap: 40px;
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 24px;
-    border: 1px solid var(--border-color);
-    backdrop-filter: blur(12px);
+    justify-content: space-between;
+    gap: 50px;
 }
 
 @media (min-width: 768px) {
     .header-container {
         flex-direction: row;
         text-align: left;
-        justify-content: space-between;
     }
     body[dir="rtl"] .header-container {
         text-align: right;
     }
 }
 
+/* النصوص الكبيرة الجريئة الجاذبة للعين */
 .profile-text h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    background: linear-gradient(135deg, #fff 0%, #a855f7 100%);
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #ffffff 30%, #c084fc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .profile-text p {
-    font-size: 1.3rem;
-    color: var(--text-muted);
+    font-size: 1.5rem;
+    color: var(--text-dim);
     font-weight: 400;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
 }
 
+/* أزرار الاتصال كأنها كبسولات بداخل الـ Figma */
 .contact-info {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 15px;
 }
 
 .contact-info span, .contact-info a {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255,255,255,0.05);
-    padding: 10px 18px;
-    border-radius: 14px;
-    font-size: 0.9rem;
-    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-glass);
+    padding: 12px 22px;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    color: var(--text-glow);
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     text-decoration: none;
-    transition: var(--transition-smooth);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-info a:hover {
-    border-color: var(--accent-glow);
-    background: rgba(99, 102, 241, 0.1);
-    box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+    border-color: var(--neon-indigo);
+    background: rgba(99, 102, 241, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
+}
+
+/* الفريم الإبداعي المضيء للصورة الشخصية */
+.profile-image-area {
+    position: relative;
+}
+.profile-image-area::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background: linear-gradient(135deg, var(--neon-indigo), var(--neon-purple));
+    border-radius: 35px;
+    z-index: -1;
+    filter: blur(25px);
+    opacity: 0.5;
 }
 
 .profile-image-area img {
-    width: 160px;
-    height: 160px;
-    border-radius: 24px; /* حواف دائرية للبطاقة زي الصورة المشروحة */
+    width: 220px;
+    height: 220px;
+    border-radius: 30px;
     object-fit: cover;
-    border: 2px solid var(--border-color);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transform: rotate(-2deg); /* حركة التفاف كرييتف خفيفة */
+    transition: all 0.4s ease;
+}
+.profile-image-area:hover img {
+    transform: rotate(0deg) scale(1.03);
 }
 
-/* شريط التبويبات المودرن الدائري */
+/* شريط التبويبات الفخم الـ Floating Navbar */
 .nav-icons {
-    max-width: 650px;
-    margin: 40px auto;
-    background: rgba(15, 10, 36, 0.8);
-    padding: 6px;
-    border-radius: 16px;
+    max-width: 680px;
+    margin: 60px auto;
+    background: rgba(8, 5, 26, 0.7);
+    padding: 8px;
+    border-radius: 20px;
     display: flex;
     justify-content: space-between;
-    border: 1px solid var(--border-color);
-    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .nav-btn {
     background: transparent;
     border: none;
-    padding: 12px 24px;
-    border-radius: 12px;
+    padding: 14px 28px;
+    border-radius: 14px;
     cursor: pointer;
     font-weight: 600;
-    color: var(--text-muted);
+    font-size: 0.95rem;
+    color: var(--text-dim);
     display: flex;
     align-items: center;
     gap: 8px;
-    transition: var(--transition-smooth);
+    transition: all 0.3s ease;
 }
 
 .nav-btn.active, .nav-btn:hover {
-    background: linear-gradient(135deg, var(--accent-glow) 0%, #a855f7 100%);
-    color: #fff;
-    box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
+    background: linear-gradient(135deg, var(--neon-indigo) 0%, var(--neon-purple) 100%);
+    color: #white;
+    box-shadow: 0 10px 25px rgba(168, 85, 247, 0.4);
+    transform: translateY(-2px);
 }
 
-/* الحاوية الرئيسية للمحتوى */
+/* حاوية الأقسام الرئيسية */
 .container {
-    max-width: 1000px;
-    margin: 0 auto 60px auto;
+    max-width: 1100px;
+    margin: 0 auto 100px auto;
     padding: 0 20px;
 }
 
+/* بطاقات الكانفاس الزجاجية الكبيرة */
 .content-sec {
-    background: var(--card-bg);
-    padding: 45px;
-    border-radius: 24px;
-    border: 1px solid var(--border-color);
-    backdrop-filter: blur(10px);
-    margin-bottom: 35px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    background: var(--card-glass);
+    padding: 50px;
+    border-radius: 32px;
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    margin-bottom: 40px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+    animation: slideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 h2 {
     color: #fff;
-    font-size: 1.6rem;
-    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 35px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
 }
-
 h2 i {
-    color: var(--accent-glow);
+    background: linear-gradient(135deg, var(--neon-indigo), var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* التايم لاين للوظائف (بطاقات احترافية منفصلة) */
+#about-text, #future-text, #edu-text {
+    font-size: 1.1rem;
+    color: #d1d5db;
+    line-height: 1.8;
+}
+
+/* تصميم تجربة العمل كبطاقات نيون مستقلة (المعروضة بالصورة) */
 .job {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 25px;
-    border-radius: 16px;
-    margin-bottom: 25px;
-    transition: var(--transition-smooth);
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 35px;
+    border-radius: 24px;
+    margin-bottom: 30px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .job:hover {
-    border-color: var(--border-color);
-    background: rgba(99, 102, 241, 0.03);
-    transform: translateY(-2px);
+    background: var(--card-hover);
+    border-color: var(--border-glow);
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.1);
+    transform: translateY(-4px);
 }
 
 .job h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: #fff;
+    font-weight: 600;
 }
 
 .job-date {
     display: inline-block;
-    font-size: 0.85rem;
-    color: #a855f7;
-    background: rgba(168, 85, 247, 0.1);
-    padding: 6px 14px;
-    border-radius: 10px;
-    margin: 8px 0 20px 0;
+    font-size: 0.9rem;
+    color: #c084fc;
+    background: rgba(168, 85, 247, 0.12);
+    padding: 6px 16px;
+    border-radius: 12px;
+    margin: 10px 0 25px 0;
     font-weight: 600;
     border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.job ul {
+    list-style: none;
 }
 
 .job ul li {
     margin-bottom: 12px;
     position: relative;
-    padding-left: 20px;
-    font-size: 0.95rem;
-    color: #d1d5db;
+    padding-left: 25px;
+    font-size: 1rem;
+    color: #e5e7eb;
 }
 body[dir="rtl"] .job ul li {
     padding-left: 0;
-    padding-right: 20px;
+    padding-right: 25px;
 }
 
 .job ul li::before {
-    content: "→";
-    color: var(--accent-glow);
+    content: "✦"; /* رمز النجمة المضيئة الكرييتف */
+    color: var(--neon-purple);
     position: absolute;
     left: 0;
-    font-weight: bold;
+    font-size: 0.9rem;
 }
 body[dir="rtl"] .job ul li::before {
-    content: "←";
     left: auto;
     right: 0;
 }
 
-/* شبكة الكبسولات للمهارات */
+/* كبسولات المهارات اللامعة والمتحركة */
 .skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 35px;
+    gap: 14px;
+    margin-bottom: 40px;
 }
 
 .skills span {
-    background: rgba(255, 255, 255, 0.03);
-    color: #e5e7eb;
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.02);
+    color: #f3f4f6;
+    padding: 12px 24px;
+    border-radius: 16px;
+    font-size: 0.95rem;
     font-weight: 500;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: var(--transition-smooth);
+    transition: all 0.3s ease;
 }
 
 .skills span:hover {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
-    border-color: var(--accent-glow);
-    color: #fff;
-    transform: scale(1.05);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(168, 85, 247, 0.25) 100%);
+    border-color: var(--neon-indigo);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+    transform: scale(1.05) translateY(-2px);
 }
 
 footer {
     text-align: center;
-    padding: 40px;
-    color: var(--text-muted);
-    font-size: 0.9rem;
+    padding: 60px 20px;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    border-top: 1px solid var(--border-glass);
 }
