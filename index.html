@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body id="body-tag">
+<body id="body-tag" dir="ltr">
 
     <div class="lang-switch">
         <button onclick="toggleLanguage()" id="lang-btn">
@@ -72,7 +72,7 @@
                     <li>Preparing payroll, calculating employee salaries, deductions, and allowances in coordination with HR.</li>
                     <li>Managing accounts payable and receivable, reconciling balances, and following up on collections.</li>
                     <li>Calculating fixed asset depreciation and managing month-end adjusting entries (prepayments and accruals).</li>
-                    <li>Preparing and file tax returns (VAT, corporate income tax, and payroll tax) in compliance with local laws.</li>
+                    <li>Preparing and filing tax returns (VAT, corporate income tax, and payroll tax) in compliance with local laws.</li>
                     <li>Assisting in the preparation of financial statements, including trial balances, income statements, and balance sheets.</li>
                     <li>Cooperating with external auditors and providing necessary documentation and schedules for the annual audit.</li>
                     <li>Maintaining proper filing and archiving of all financial documents, vouchers, and receipts.</li>
@@ -150,29 +150,31 @@
     <script>
         function filterSection(sectionId) {
             const sections = document.querySelectorAll('.content-sec');
-            
-            sections.forEach(sec => {
-                if (sec.id !== 'edu-sec') {
-                    sec.style.display = 'none';
-                }
-            });
-
             const buttons = document.querySelectorAll('.nav-btn');
+            
+            // إزالة الـ Active من كل الأزرار أولاً
             buttons.forEach(btn => btn.classList.remove('active'));
 
             if (sectionId === 'all') {
-                sections.forEach(sec => sec.style.display = 'block');
-                const btnAll = document.getElementById('btn-all');
-                if (btnAll) btnAll.classList.add('active');
+                // إظهار كل الأقسام بلا استثناء
+                sections.forEach(sec => {
+                    sec.style.display = 'block';
+                });
+                document.getElementById('btn-all').classList.add('active');
             } else {
-                const targetSec = document.getElementById(sectionId + '-sec');
-                if (targetSec) targetSec.style.display = 'block';
-                
-                const targetBtn = document.getElementById('btn-' + sectionId);
-                if (targetBtn) targetBtn.classList.add('active');
+                // إخفاء الكل ما عدا القسم المختار وقسم التعليم (Edu) ليبقى ظاهراً بالأسفل دائماً
+                sections.forEach(sec => {
+                    if (sec.id === sectionId + '-sec' || sec.id === 'edu-sec') {
+                        sec.style.display = 'block';
+                    } else {
+                        sec.style.display = 'none';
+                    }
+                });
+                document.getElementById('btn-' + sectionId).classList.add('active');
             }
         }
 
+        // عند فتح الموقع لأول مرة يتم تفعيل خيار All وإظهار كل الأقسام
         window.onload = () => { filterSection('all'); };
 
         function toggleLanguage() {
