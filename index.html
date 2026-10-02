@@ -5,15 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Yousef Mohamed Gomaa - Accountant experienced in treasury, accounts payable, accounts receivable, and financial reporting.">
   <title>Yousef Gomaa | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root { --bg:#060413; --card:rgba(15,11,42,.72); --hover:rgba(26,20,68,.8); --purple:#a855f7; --indigo:#6366f1; --text:#fff; --muted:#c7cad4; --border:rgba(168,85,247,.25); }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
-    body { margin:0; background:var(--bg); color:var(--text); font:400 16px/1.7 Poppins,system-ui,sans-serif; }
-    html[lang="ar"] body { font-family:Cairo,system-ui,sans-serif; }
+    body { margin:0; background:var(--bg); color:var(--text); font:400 16px/1.7 system-ui,"Segoe UI",sans-serif; }
     body::before,body::after { content:""; position:fixed; width:320px; height:320px; border-radius:50%; filter:blur(110px); opacity:.25; pointer-events:none; z-index:-1; }
     body::before { top:-130px; left:-130px; background:var(--indigo); }
     body::after { right:-130px; bottom:5%; background:var(--purple); }
@@ -21,4 +17,161 @@
     a:focus-visible,button:focus-visible { outline:2px solid #fff; outline-offset:3px; }
     .wrap { max-width:1100px; margin:auto; padding:0 20px; }
     .topbar { display:flex; justify-content:flex-end; padding-top:22px; }
-    .lang-button,.nav-button,.download { border:1px solid var(--border); border-radius:12px
+    .lang-button,.nav-button { border:1px solid var(--border); border-radius:12px; background:rgba(255,255,255,.05); color:#fff; font:inherit; cursor:pointer; }
+    .lang-button { padding:7px 17px; font-weight:700; }
+    .hero,.card { background:var(--card); border:1px solid var(--border); box-shadow:0 20px 45px rgba(0,0,0,.2); backdrop-filter:blur(15px); }
+    .hero { margin-top:18px; padding:35px; border-radius:26px; display:flex; justify-content:space-between; align-items:center; gap:28px; }
+    h1 { margin:0 0 6px; font-size:clamp(2rem,4vw,3.5rem); line-height:1.2; background:linear-gradient(120deg,#fff,#c084fc); color:transparent; background-clip:text; }
+    .subtitle { margin:0 0 20px; color:var(--muted); font-size:1.1rem; }
+    .contact { display:flex; flex-wrap:wrap; gap:9px; }
+    .contact a,.contact span { display:inline-block; padding:8px 12px; border:1px solid var(--border); border-radius:10px; background:rgba(255,255,255,.03); color:#eee3ff; text-decoration:none; overflow-wrap:anywhere; }
+    .contact a:hover { border-color:var(--purple); background:rgba(168,85,247,.18); }
+    .profile { width:190px; height:190px; flex:none; border-radius:25px; display:grid; place-items:center; background:linear-gradient(135deg,var(--indigo),var(--purple)); border:2px solid var(--border); box-shadow:0 0 35px rgba(168,85,247,.27); font-size:4rem; font-weight:800; letter-spacing:.05em; }
+    nav { margin:22px 0; padding:8px; display:flex; flex-wrap:wrap; gap:8px; border-radius:18px; background:rgba(8,5,26,.86); border:1px solid var(--border); }
+    .nav-button { padding:10px 14px; font-size:.9rem; flex:1 0 auto; }
+    .nav-button:hover,.nav-button.active { background:linear-gradient(120deg,var(--indigo),var(--purple)); }
+    .card { padding:30px 34px; margin-bottom:22px; border-radius:24px; }
+    h2 { margin:0 0 15px; font-size:1.45rem; }
+    h3 { margin:0; font-size:1.1rem; }
+    p { margin:0; }
+    .job { padding:18px 0; border-top:1px solid var(--border); }
+    .job:first-of-type { border-top:0; padding-top:0; }
+    .date { display:block; margin:4px 0 10px; color:#d8b4fe; font-size:.9rem; font-weight:600; }
+    ul { margin:7px 0 0; padding-inline-start:23px; }
+    li { margin:6px 0; color:#e3e4eb; }
+    .chips { display:flex; flex-wrap:wrap; gap:9px; }
+    .chips span { border:1px solid var(--border); border-radius:10px; padding:7px 12px; background:rgba(255,255,255,.03); }
+    footer { border-top:1px solid var(--border); padding:32px 20px; text-align:center; color:var(--muted); }
+    [hidden] { display:none !important; }
+    @media(max-width:700px) { .hero { flex-direction:column-reverse; text-align:center; padding:25px 18px; } .profile { width:140px; height:140px; } .contact { justify-content:center; } .card { padding:24px 18px; } .nav-button { flex:1 1 calc(50% - 8px); } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar"><button class="lang-button" id="languageButton" type="button" aria-label="التبديل إلى العربية">العربية</button></div>
+    <header class="hero">
+      <div>
+        <h1 data-en="Yousef Mohamed Gomaa" data-ar="يوسف محمد جمعة">Yousef Mohamed Gomaa</h1>
+        <p class="subtitle" data-en="Accountant | Treasury, AP &amp; AR" data-ar="محاسب | الخزينة وحسابات الموردين والعملاء">Accountant | Treasury, AP &amp; AR</p>
+        <div class="contact">
+          <a href="mailto:Yousefgomaa14@gmail.com">Yousefgomaa14@gmail.com</a>
+          <a href="tel:+201098137090">+20 1098137090</a>
+          <span data-en="Helwan, Cairo, Egypt" data-ar="حلوان، القاهرة، مصر">Helwan, Cairo, Egypt</span>
+          <a href="https://www.linkedin.com/in/yousef-gomaa1" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      <div class="profile" aria-hidden="true" data-en="YG" data-ar="ي ج">YG</div>
+    </header>
+
+    <nav id="sectionNav" aria-label="Portfolio sections">
+      <button class="nav-button active" type="button" data-filter="all" data-en="All" data-ar="الكل">All</button>
+      <button class="nav-button" type="button" data-filter="summary" data-en="Summary" data-ar="الملخص">Summary</button>
+      <button class="nav-button" type="button" data-filter="experience" data-en="Experience" data-ar="الخبرة">Experience</button>
+      <button class="nav-button" type="button" data-filter="education" data-en="Education" data-ar="التعليم">Education</button>
+      <button class="nav-button" type="button" data-filter="internship" data-en="Internship" data-ar="التدريب">Internship</button>
+      <button class="nav-button" type="button" data-filter="skills" data-en="Skills" data-ar="المهارات">Skills</button>
+      <button class="nav-button" type="button" data-filter="languages" data-en="Languages" data-ar="اللغات">Languages</button>
+    </nav>
+
+    <main>
+      <div class="language-content" data-language="en">
+        <section class="card" data-section="summary"><h2>Professional Summary</h2><p>Accountant with experience in treasury, accounts payable, accounts receivable, journal entries, bank reconciliations, and financial reporting. Familiar with IFRS principles and Odoo and Comsys ERP systems.</p></section>
+        <section class="card" data-section="experience">
+          <h2>Professional Experience</h2>
+          <article class="job"><h3>Accountant | Delta Chemicals (Delta Company for Fertilizers and Agricultural Chemicals)</h3><span class="date">Feb 2026–Present</span><ul>
+            <li>Record journal entries and document financial transactions in the general ledger.</li>
+            <li>Issue, review, and verify sales and purchase invoices; monitor daily receipts, payments, cash, and checks.</li>
+            <li>Perform monthly bank reconciliations and reconcile customer and vendor balances; follow up on collections and approved payments.</li>
+            <li>Prepare payroll calculations, including salaries, deductions, and allowances, in coordination with HR.</li>
+            <li>Calculate fixed asset depreciation and month-end adjustments for prepayments and accruals.</li>
+            <li>Prepare and file VAT, corporate income tax, and payroll tax returns.</li>
+            <li>Assist with trial balances, income statements, balance sheets, and annual audit documentation.</li>
+            <li>Maintain organized financial records, vouchers, and receipts in line with company policies and accounting standards.</li>
+          </ul></article>
+          <article class="job"><h3>Accountant | Blue Ocean Hotel and Diving Center Management Company</h3><span class="date">May 2025–Feb 2026</span><ul>
+            <li>Recorded and reviewed daily revenue and payment transactions against approved documentation.</li>
+            <li>Reconciled customer, vendor, and bank accounts and prepared related financial reports.</li>
+            <li>Monitored outstanding invoices, collections, and approved payments; maintained organized financial records.</li>
+          </ul></article>
+          <article class="job"><h3>AR &amp; AP Accountant | Winners Food Supplies Company</h3><span class="date">Dec 2024–Apr 2025</span><ul>
+            <li>Followed up on customer balances, invoices, payments, and settlements.</li>
+            <li>Recorded daily sales invoices and customer data in accounting programs.</li>
+            <li>Assisted with periodic client reports and prepared monthly sales invoice reports.</li>
+          </ul></article>
+          <article class="job"><h3>Treasury Accountant and Purchasing Accountant | Beach Safari Nubian Resort</h3><span class="date">Jun 2024–Nov 2024</span><ul>
+            <li>Recorded daily treasury movements, revenues, receipts, payments, and related accounting entries.</li>
+            <li>Disbursed cash according to the disbursement plan and monitored bank balances.</li>
+            <li>Prepared supplier records and entries for supplier payables; followed up on debts and payment dates.</li>
+            <li>Matched purchase invoices to quantities received, followed up on purchase VAT, and prepared monthly supplier balance reports.</li>
+          </ul></article>
+        </section>
+        <section class="card" data-section="education"><h2>Education</h2><p>Bachelor of Commerce, Accounting | Helwan University | 2022 | Grade: Good</p></section>
+        <section class="card" data-section="internship"><h2>Internship</h2><p>Bank Misr | Jul 2020 and Jul 2021 — Financial data analysis, report preparation, and account management.</p></section>
+        <section class="card" data-section="skills"><h2>Accounting and Technical Skills</h2><div class="chips"><span>Journal entries</span><span>Trial balances</span><span>Accounts payable and receivable</span><span>Financial statements</span><span>Bank reconciliations</span><span>IFRS principles</span><span>Microsoft Excel (functions, PivotTables, VLOOKUP, XLOOKUP)</span><span>Microsoft Office</span><span>Comsys</span><span>Odoo ERP</span></div></section>
+        <section class="card" data-section="languages"><h2>Languages</h2><p>Arabic: Native | English: Good</p></section>
+      </div>
+
+      <div class="language-content" data-language="ar" hidden>
+        <section class="card" data-section="summary"><h2>الملخص المهني</h2><p>محاسب لديه خبرة في أعمال الخزينة، وحسابات الموردين والعملاء، وقيود اليومية، والتسويات البنكية، وإعداد التقارير المالية. ملم بمبادئ IFRS وأنظمة Odoo وComsys ERP.</p></section>
+        <section class="card" data-section="experience">
+          <h2>الخبرة العملية</h2>
+          <article class="job"><h3>محاسب | دلتا للمواد الكيماوية (شركة دلتا للأسمدة والكيماويات الزراعية)</h3><span class="date">فبراير 2026–حتى الآن</span><ul>
+            <li>تسجيل قيود اليومية وتوثيق المعاملات المالية في دفتر الأستاذ العام.</li>
+            <li>إصدار فواتير البيع والشراء ومراجعتها والتحقق منها، ومتابعة المقبوضات والمدفوعات اليومية والنقدية والشيكات.</li>
+            <li>إجراء التسويات البنكية الشهرية ومطابقة أرصدة العملاء والموردين، ومتابعة التحصيلات والمدفوعات المعتمدة.</li>
+            <li>إعداد حسابات الرواتب، بما في ذلك الأجور والاستقطاعات والبدلات، بالتنسيق مع الموارد البشرية.</li>
+            <li>حساب إهلاك الأصول الثابتة وتسويات نهاية الشهر للمصروفات والإيرادات المقدمة والمستحقة.</li>
+            <li>إعداد وتقديم إقرارات ضريبة القيمة المضافة وضريبة دخل الشركات وضريبة الرواتب.</li>
+            <li>المساعدة في إعداد ميزان المراجعة وقائمة الدخل والميزانية العمومية ومستندات المراجعة السنوية.</li>
+            <li>تنظيم السجلات والمستندات المالية والسندات والإيصالات وفق سياسات الشركة والمعايير المحاسبية.</li>
+          </ul></article>
+          <article class="job"><h3>محاسب | شركة بلو أوشين لإدارة الفنادق ومراكز الغوص</h3><span class="date">مايو 2025–فبراير 2026</span><ul>
+            <li>تسجيل ومراجعة معاملات الإيرادات والمدفوعات اليومية مقابل المستندات المعتمدة.</li>
+            <li>مطابقة حسابات العملاء والموردين والبنوك وإعداد التقارير المالية ذات الصلة.</li>
+            <li>متابعة الفواتير المستحقة والتحصيلات والمدفوعات المعتمدة، وتنظيم السجلات المالية.</li>
+          </ul></article>
+          <article class="job"><h3>محاسب عملاء وموردين | شركة وينرز للمواد الغذائية</h3><span class="date">ديسمبر 2024–أبريل 2025</span><ul>
+            <li>متابعة أرصدة العملاء والفواتير والمدفوعات والتسويات.</li>
+            <li>تسجيل فواتير المبيعات اليومية وبيانات العملاء على البرامج المحاسبية.</li>
+            <li>المساعدة في التقارير الدورية للعملاء وإعداد تقارير شهرية لفواتير المبيعات.</li>
+          </ul></article>
+          <article class="job"><h3>محاسب خزينة ومشتريات | منتجع بيتش سفاري نوبيان</h3><span class="date">يونيو 2024–نوفمبر 2024</span><ul>
+            <li>تسجيل حركات الخزينة اليومية والإيرادات والمقبوضات والمدفوعات والقيود المرتبطة بها.</li>
+            <li>صرف النقدية وفق خطة الصرف ومراقبة أرصدة البنوك.</li>
+            <li>إعداد سجلات الموردين وقيود مستحقاتهم، ومتابعة المديونيات ومواعيد السداد.</li>
+            <li>مطابقة فواتير الشراء مع الكميات المستلمة، ومتابعة ضريبة القيمة المضافة للمشتريات، وإعداد تقارير شهرية لأرصدة الموردين.</li>
+          </ul></article>
+        </section>
+        <section class="card" data-section="education"><h2>التعليم</h2><p>بكالوريوس تجارة، قسم المحاسبة | جامعة حلوان | 2022 | التقدير: جيد</p></section>
+        <section class="card" data-section="internship"><h2>التدريب</h2><p>بنك مصر | يوليو 2020 ويوليو 2021 — تحليل البيانات المالية، وإعداد التقارير، وإدارة الحسابات.</p></section>
+        <section class="card" data-section="skills"><h2>المهارات المحاسبية والتقنية</h2><div class="chips"><span>قيود اليومية</span><span>موازين المراجعة</span><span>حسابات الموردين والعملاء</span><span>القوائم المالية</span><span>التسويات البنكية</span><span>مبادئ IFRS</span><span>Microsoft Excel (الدوال وPivotTables وVLOOKUP وXLOOKUP)</span><span>Microsoft Office</span><span>Comsys</span><span>Odoo ERP</span></div></section>
+        <section class="card" data-section="languages"><h2>اللغات</h2><p>العربية: اللغة الأم | الإنجليزية: جيد</p></section>
+      </div>
+    </main>
+  </div>
+  <footer><span data-en="© 2026 Yousef Gomaa" data-ar="© 2026 يوسف جمعة">© 2026 Yousef Gomaa</span></footer>
+  <script>
+    const root=document.documentElement;
+    const languageButton=document.getElementById('languageButton');
+    const navButtons=[...document.querySelectorAll('.nav-button')];
+    function setLanguage(lang) {
+      root.lang=lang; root.dir=lang==='ar'?'rtl':'ltr';
+      languageButton.textContent=lang==='ar'?'English':'العربية';
+      languageButton.setAttribute('aria-label',lang==='ar'?'Switch to English':'التبديل إلى العربية');
+      document.title=lang==='ar'?'يوسف جمعة | الملف المهني':'Yousef Gomaa | Portfolio';
+      document.querySelector('meta[name="description"]').content=lang==='ar'?'يوسف محمد جمعة - محاسب لديه خبرة في الخزينة وحسابات الموردين والعملاء والتقارير المالية.':'Yousef Mohamed Gomaa - Accountant experienced in treasury, accounts payable, accounts receivable, and financial reporting.';
+      document.getElementById('sectionNav').setAttribute('aria-label',lang==='ar'?'أقسام الملف المهني':'Portfolio sections');
+      document.querySelectorAll('[data-en][data-ar]').forEach(el=>{ el.textContent=el.dataset[lang]; });
+      document.querySelectorAll('.language-content').forEach(el=>{ el.hidden=el.dataset.language!==lang; });
+    }
+    function filterSection(section) {
+      document.querySelectorAll('[data-section]').forEach(el=>{ el.hidden=section!=='all'&&el.dataset.section!==section; });
+      navButtons.forEach(btn=>{ const active=btn.dataset.filter===section; btn.classList.toggle('active',active); btn.setAttribute('aria-pressed',String(active)); });
+    }
+    languageButton.addEventListener('click',()=>setLanguage(root.lang==='en'?'ar':'en'));
+    navButtons.forEach(btn=>btn.addEventListener('click',()=>filterSection(btn.dataset.filter)));
+    filterSection('all');
+  </script>
+</body>
+</html>
