@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Yousef Mohamed Gomaa - General Accountant experienced in treasury, accounts payable, accounts receivable, tax, payroll and financial reporting.">
+<meta name="description" content="Yousef Mohamed Gomaa - General Accountant experienced in treasury, accounts payable, accounts receivable, payroll and financial reporting.">
 <meta name="theme-color" content="#0b1020">
 <title>Yousef Gomaa | Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,6 +57,8 @@ header.top.scrolled{border-color:var(--line)}
 .icon-btn{display:grid;place-items:center;min-width:40px;height:40px;padding:0 10px;border-radius:11px;border:1px solid var(--line-strong);background:var(--card);font-weight:700;font-size:.9rem;transition:.2s}
 .icon-btn:hover{border-color:var(--accent);color:var(--accent)}
 .burger{display:none}
+.cv-btn{display:inline-flex;gap:6px;align-items:center;color:var(--accent)}
+.cv-btn svg{font-size:1.05rem}
 
 /* hero */
 .hero{padding:70px 0 40px;display:grid;grid-template-columns:1.35fr .9fr;gap:50px;align-items:center}
@@ -408,6 +410,7 @@ footer{padding:50px 0 40px;text-align:center;color:var(--muted);font-size:.9rem}
       <a href="#contact" data-i="nav_contact"></a>
     </nav>
     <div class="tools">
+      <a class="icon-btn cv-btn" href="./Yousef_Gomaa_CV.pdf" download="Yousef_Gomaa_CV.pdf" aria-label="Download CV (PDF)" title="Download CV (PDF)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 12v6M9 15l3 3 3-3"/></svg><span>CV</span></a>
       <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme"></button>
       <button class="icon-btn" id="langBtn" type="button"></button>
       <button class="icon-btn burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
@@ -424,6 +427,7 @@ footer{padding:50px 0 40px;text-align:center;color:var(--muted);font-size:.9rem}
       <p class="lead reveal" data-i="lead"></p>
       <div class="cta reveal">
         <a class="btn primary" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg><span data-i="cta_contact"></span></a>
+        <a class="btn" href="./Yousef_Gomaa_CV.pdf" download="Yousef_Gomaa_CV.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 12v6M9 15l3 3 3-3"/></svg><span data-i="cta_cv"></span></a>
         <a class="btn" href="#experience"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><span data-i="cta_exp"></span></a>
         <a class="btn" href="https://www.linkedin.com/in/yousef-gomaa1" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.6V9h3.5v11.5z"/></svg>LinkedIn</a>
       </div>
@@ -452,7 +456,7 @@ footer{padding:50px 0 40px;text-align:center;color:var(--muted);font-size:.9rem}
       <div class="card glow reveal info">
         <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><div><small data-i="lbl_loc"></small><span data-i="loc"></span></div></div>
         <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg><div><small data-i="lbl_deg"></small><span data-i="deg_short"></span></div></div>
-        <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 9h8M8 13h5"/></svg><div><small data-i="lbl_erp"></small><span>Odoo ERP · Comsys · MS Office</span></div></div>
+        <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 9h8M8 13h5"/></svg><div><small data-i="lbl_erp"></small><span>Odoo ERP · MS Office · Excel</span></div></div>
         <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><div><small data-i="lbl_lang"></small><span data-i="langs_short"></span></div></div>
       </div>
     </div>
@@ -547,13 +551,13 @@ const T = {
   en:{
     brand:"Yousef Gomaa", nav_about:"About", nav_exp:"Experience", nav_odoo:"Odoo", nav_dash:"Dashboards", nav_edu:"Education", nav_skills:"Skills", nav_contact:"Contact",
     badge:"Open to new opportunities", hi:"Hi, I'm", name:"Yousef Mohamed Gomaa", iam:"",
-    roles:["General Accountant","Treasury Accountant","AP & AR Specialist","Tax & Payroll Accountant"],
-    lead:"Dedicated general accountant with hands-on experience in treasury, accounts payable, accounts receivable, tax, payroll and financial reporting — applying IFRS principles with Odoo and Comsys ERP to keep the numbers accurate.",
-    cta_contact:"Get in touch", cta_exp:"View experience", tag1:"Financial Reporting", tag2:"IFRS · Odoo · Comsys",
+    roles:["General Accountant","Treasury Accountant","AP & AR Specialist","Odoo ERP Accountant"],
+    lead:"Dedicated general accountant with hands-on experience in treasury, accounts payable, accounts receivable, payroll, reconciliations and financial reporting — applying IFRS principles with Odoo ERP to keep the numbers accurate.",
+    cta_contact:"Get in touch", cta_cv:"Download CV", cta_exp:"View experience", tag1:"Financial Reporting", tag2:"IFRS · Odoo ERP",
     st1:"Years of experience", st2:"Companies", st3:"Professional roles", st4:"Bank Misr internships",
     about_eb:"About me", about_h:"Accuracy behind every number",
-    summary:"Dedicated General Accountant with extensive experience in Treasury, Accounts Payable (AP), and Accounts Receivable (AR). Proficient in managing financial transactions and bank reconciliations while applying IFRS-based accounting principles to ensure accurate reporting. Skilled in utilizing Odoo and Comsys ERP systems to streamline financial workflows.",
-    highlights:["Treasury","Accounts Payable","Accounts Receivable","Bank Reconciliation","VAT & Tax Returns","Payroll","Month-end Close","IFRS","Power BI","AI Data Analysis"],
+    summary:"Dedicated General Accountant with extensive experience in Treasury, Accounts Payable (AP), and Accounts Receivable (AR). Proficient in managing financial transactions and bank reconciliations while applying IFRS-based accounting principles to ensure accurate reporting. Skilled in using Odoo ERP to streamline financial workflows.",
+    highlights:["Treasury","Accounts Payable","Accounts Receivable","Bank Reconciliation","Odoo ERP","Payroll","Month-end Close","IFRS","Power BI","AI Data Analysis"],
     lbl_loc:"Location", loc:"Helwan, Cairo, Egypt", lbl_deg:"Education", deg_short:"B.Com Accounting — Helwan University",
     lbl_erp:"Systems", lbl_lang:"Languages", langs_short:"Arabic (Native) · English (Good)",
     odoo_eb:"ERP expertise", odoo_h:"Odoo ERP — Accounting", odoo_p:"Hands-on daily work in Odoo Accounting across the full cycle, from issuing documents to closing and reporting. Tap any card for details.", flow:["Invoice / Bill","Payment","Reconciliation","Reports"],
@@ -568,7 +572,7 @@ const T = {
     sk_eb:"Toolkit", sk_h:"Skills & expertise", sk_acc:"Accounting skills", sk_tools:"Computer skills", sk_lang:"Languages",
     acc:["Solid understanding of accounting principles (IFRS)","Recording journal entries and preparing trial balances","Accounts payable (AP) and accounts receivable (AR) cycles","Preparing financial statements and bank reconciliations","Microsoft Excel: functions, PivotTables, VLOOKUP, XLOOKUP","Strong attention to detail and numerical accuracy","Good analytical and problem-solving skills","Eager to learn and grow; works well in a team"],
     sk_data:"Data analysis & AI", data:["Excel dashboards: PivotTables, PivotCharts, slicers, Power Query","Power BI reports: data modeling, DAX measures, interactive visuals","Using AI tools (ChatGPT, Microsoft Copilot) to analyse data and draft insights","Variance, trend and aging analysis for management reporting","Automating recurring monthly reports"],
-    tools:[["Microsoft Office & Excel","Very good",90],["Odoo ERP","Very good",85],["Comsys","Very good",85]],
+    tools:[["Microsoft Office & Excel","Very good",90],["Odoo ERP","Very good",85]],
     langs:[["Arabic","Native",100],["English","Good",70]],
     soft:["Leadership","Negotiation","Presentation","Organizational skills","Communication","Critical thinking","Self-motivation","Teamwork"],
     ct_eb:"Contact", ct_h:"Let's work together", ct_p:"Looking for a reliable general accountant for your team? Reach out by email, phone or LinkedIn.",
@@ -578,13 +582,13 @@ const T = {
   ar:{
     brand:"يوسف جمعة", nav_about:"نبذة", nav_exp:"الخبرات", nav_odoo:"أودو", nav_dash:"الداشبورد", nav_edu:"التعليم", nav_skills:"المهارات", nav_contact:"تواصل",
     badge:"متاح لفرص عمل جديدة", hi:"أهلاً، أنا", name:"يوسف محمد جمعة", iam:"",
-    roles:["محاسب عام","محاسب خزينة","محاسب عملاء وموردين","محاسب ضرائب ورواتب"],
-    lead:"محاسب عام لديه خبرة عملية في الخزينة وحسابات الموردين والعملاء والضرائب والرواتب وإعداد التقارير المالية، مع تطبيق معايير IFRS واستخدام أنظمة Odoo وComsys لضمان دقة الأرقام.",
-    cta_contact:"تواصل معي", cta_exp:"عرض الخبرات", tag1:"التقارير المالية", tag2:"IFRS · Odoo · Comsys",
+    roles:["محاسب عام","محاسب خزينة","محاسب عملاء وموردين","محاسب على نظام Odoo"],
+    lead:"محاسب عام لديه خبرة عملية في الخزينة وحسابات الموردين والعملاء والرواتب والتسويات وإعداد التقارير المالية، مع تطبيق معايير IFRS واستخدام نظام Odoo ERP لضمان دقة الأرقام.",
+    cta_contact:"تواصل معي", cta_cv:"تحميل الـ CV", cta_exp:"عرض الخبرات", tag1:"التقارير المالية", tag2:"IFRS · Odoo ERP",
     st1:"سنوات خبرة", st2:"شركات", st3:"مناصب مهنية", st4:"تدريب في بنك مصر",
     about_eb:"نبذة عني", about_h:"دقة وراء كل رقم",
-    summary:"محاسب عام متفانٍ لديه خبرة واسعة في الخزينة وحسابات الموردين (AP) وحسابات العملاء (AR). متمكن من إدارة المعاملات المالية والتسويات البنكية مع تطبيق مبادئ المحاسبة وفق معايير IFRS لضمان دقة التقارير، ومتمرس في استخدام أنظمة Odoo وComsys ERP لتبسيط سير العمل المالي.",
-    highlights:["الخزينة","حسابات الموردين","حسابات العملاء","التسويات البنكية","الإقرارات الضريبية","الرواتب","إقفال نهاية الشهر","IFRS","Power BI","تحليل البيانات بالذكاء الاصطناعي"],
+    summary:"محاسب عام متفانٍ لديه خبرة واسعة في الخزينة وحسابات الموردين (AP) وحسابات العملاء (AR). متمكن من إدارة المعاملات المالية والتسويات البنكية مع تطبيق مبادئ المحاسبة وفق معايير IFRS لضمان دقة التقارير، ومتمرس في استخدام نظام Odoo ERP لتبسيط سير العمل المالي.",
+    highlights:["الخزينة","حسابات الموردين","حسابات العملاء","التسويات البنكية","Odoo ERP","الرواتب","إقفال نهاية الشهر","IFRS","Power BI","تحليل البيانات بالذكاء الاصطناعي"],
     lbl_loc:"الموقع", loc:"حلوان، القاهرة، مصر", lbl_deg:"المؤهل", deg_short:"بكالوريوس تجارة محاسبة — جامعة حلوان",
     lbl_erp:"الأنظمة", lbl_lang:"اللغات", langs_short:"العربية (اللغة الأم) · الإنجليزية (جيد)",
     odoo_eb:"خبرة أنظمة ERP", odoo_h:"نظام Odoo — الحسابات", odoo_p:"عمل يومي على موديول الحسابات في Odoo يغطي الدورة كاملة، من إصدار المستندات حتى الإقفال والتقارير. اضغط على أي كارت لعرض التفاصيل.", flow:["الفاتورة","السداد","التسوية","التقارير"],
@@ -599,7 +603,7 @@ const T = {
     sk_eb:"الأدوات", sk_h:"المهارات والخبرات", sk_acc:"المهارات المحاسبية", sk_tools:"مهارات الحاسب", sk_lang:"اللغات",
     acc:["فهم قوي لمبادئ المحاسبة (IFRS)","تسجيل قيود اليومية وإعداد موازين المراجعة","دورات حسابات الموردين (AP) والعملاء (AR)","المساعدة في إعداد القوائم المالية والتسويات البنكية","Microsoft Excel: الدوال وPivotTables وVLOOKUP وXLOOKUP","اهتمام كبير بالتفاصيل ودقة الأرقام","مهارات تحليلية وقدرة على حل المشكلات","شغف بالتعلم والتطور والعمل ضمن فريق"],
     sk_data:"تحليل البيانات والذكاء الاصطناعي", data:["داشبوردات Excel: PivotTables وPivotCharts وSlicers وPower Query","تقارير Power BI: نمذجة البيانات ومقاييس DAX والمرئيات التفاعلية","استخدام أدوات الذكاء الاصطناعي (ChatGPT وMicrosoft Copilot) لتحليل البيانات وصياغة النتائج","تحليل الانحرافات والاتجاهات وأعمار الديون لتقارير الإدارة","أتمتة التقارير الشهرية المتكررة"],
-    tools:[["Microsoft Office & Excel","جيد جداً",90],["Odoo ERP","جيد جداً",85],["Comsys","جيد جداً",85]],
+    tools:[["Microsoft Office & Excel","جيد جداً",90],["Odoo ERP","جيد جداً",85]],
     langs:[["العربية","اللغة الأم",100],["الإنجليزية","جيد",70]],
     soft:["القيادة","التفاوض","العرض والتقديم","المهارات التنظيمية","التواصل","التفكير النقدي","التحفيز الذاتي","العمل الجماعي"],
     ct_eb:"تواصل", ct_h:"لنعمل معاً", ct_p:"تبحث عن محاسب عام موثوق لفريقك؟ تواصل معي عبر البريد أو الهاتف أو LinkedIn.",
@@ -611,7 +615,7 @@ const MONTHS = {en:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct",
 
 const CATS = {
   gl:{en:"General Ledger",ar:"دفتر الأستاذ"}, treasury:{en:"Treasury",ar:"الخزينة"}, ap:{en:"Accounts Payable",ar:"الموردين"},
-  ar:{en:"Accounts Receivable",ar:"العملاء"}, recon:{en:"Reconciliation",ar:"التسويات"}, tax:{en:"Tax & VAT",ar:"الضرائب"},
+  ar:{en:"Accounts Receivable",ar:"العملاء"}, recon:{en:"Reconciliation",ar:"التسويات"}, tax:{en:"VAT",ar:"القيمة المضافة"},
   payroll:{en:"Payroll",ar:"الرواتب"}, report:{en:"Reporting",ar:"التقارير"}, audit:{en:"Audit",ar:"المراجعة"}
 };
 
@@ -628,7 +632,7 @@ const JOBS = [
       "Preparing payroll, calculating employee salaries, deductions, and allowances in coordination with HR.",
       "Managing accounts payable and receivable, reconciling balances, and following up on collections.",
       "Calculating fixed asset depreciation and managing month-end adjusting entries (prepayments and accruals).",
-      "Preparing and filing tax returns (VAT, corporate income tax, and payroll tax) in compliance with local laws.",
+      "Recording VAT on sales and purchase invoices and preparing supporting data for tax filings.",
       "Assisting in the preparation of financial statements, including trial balances, income statements, and balance sheets.",
       "Cooperating with external auditors and providing necessary documentation and schedules for the annual audit.",
       "Maintaining proper filing and archiving of all financial documents, vouchers, and receipts.",
@@ -643,7 +647,7 @@ const JOBS = [
       "إعداد الرواتب وحساب أجور الموظفين والاستقطاعات والبدلات بالتنسيق مع الموارد البشرية.",
       "إدارة حسابات الموردين والعملاء، ومطابقة الأرصدة، ومتابعة التحصيلات.",
       "حساب إهلاك الأصول الثابتة وإدارة قيود التسوية في نهاية الشهر (المصروفات المقدمة والمستحقة).",
-      "إعداد وتقديم الإقرارات الضريبية (القيمة المضافة، ضريبة دخل الشركات، ضريبة كسب العمل) وفقاً للقوانين المحلية.",
+      "تسجيل ضريبة القيمة المضافة على فواتير البيع والشراء وتجهيز البيانات المؤيدة للملفات الضريبية.",
       "المساعدة في إعداد القوائم المالية، بما في ذلك ميزان المراجعة وقائمة الدخل والميزانية العمومية.",
       "التعاون مع المراجعين الخارجيين وتوفير المستندات والجداول اللازمة للمراجعة السنوية.",
       "الحفظ والأرشفة السليمة لجميع المستندات المالية والسندات والإيصالات.",
@@ -776,9 +780,9 @@ const ODOO = [
     p:{en:["Post manual journal entries","Accruals and prepayments at month end","Fixed asset depreciation entries","Support month-end closing"],
        ar:["ترحيل قيود اليومية اليدوية","قيود المصروفات المستحقة والمقدمة","قيود إهلاك الأصول الثابتة","المساعدة في الإقفال الشهري"]}},
   { ic:'<path d="M19 5L5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/>',
-    t:{en:"Taxes & VAT",ar:"الضرائب والقيمة المضافة"}, d:{en:"Applying taxes on documents and preparing the VAT report.",ar:"تطبيق الضرائب على المستندات وإعداد تقرير القيمة المضافة."},
-    p:{en:["Apply correct VAT on sales and purchases","Review tax amounts on invoices and bills","Extract the VAT report for tax returns"],
-       ar:["تطبيق ضريبة القيمة المضافة الصحيحة على المبيعات والمشتريات","مراجعة مبالغ الضرائب على الفواتير","استخراج تقرير القيمة المضافة للإقرارات الضريبية"]}},
+    t:{en:"VAT on invoices",ar:"القيمة المضافة على الفواتير"}, d:{en:"Applying the correct VAT on invoices and bills.",ar:"تطبيق ضريبة القيمة المضافة الصحيحة على الفواتير."},
+    p:{en:["Apply correct VAT on sales and purchases","Review tax amounts on invoices and bills"],
+       ar:["تطبيق ضريبة القيمة المضافة الصحيحة على المبيعات والمشتريات","مراجعة مبالغ الضرائب على الفواتير"]}},
   { ic:'<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/>',
     t:{en:"Collections follow-up",ar:"متابعة التحصيل"}, d:{en:"Following up on overdue customer balances.",ar:"متابعة أرصدة العملاء المتأخرة."},
     p:{en:["Track overdue invoices by customer","Send payment reminders and statements","Coordinate collections with sales"],
