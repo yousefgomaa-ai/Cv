@@ -178,6 +178,121 @@ button.chip:hover{border-color:var(--accent);color:var(--accent)}
 .mod li{display:flex;gap:9px;font-size:.87rem;color:var(--soft);line-height:1.5}
 .mod li svg{color:var(--accent);margin-top:4px;font-size:.85rem}
 
+/* dashboards */
+.ai-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+.ai-card{display:flex;gap:14px;align-items:flex-start;padding:18px}
+.ai-card h3{margin:0 0 4px;font-size:1rem}
+.ai-card p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.55}
+.ai-card .mod-ic{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#04121a}
+.dash-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.dash-tab{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:15px;border:1px solid var(--line);background:var(--card);text-align:start;transition:.25s}
+.dash-tab:hover{border-color:var(--line-strong)}
+.dash-tab.on{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-bg)}
+.dash-tab b{display:block;font-size:.92rem;line-height:1.3}
+.dash-tab small{color:var(--muted);font-size:.78rem}
+.dt-ic{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;flex:none;color:#fff;font-size:1.1rem}
+.dt-ic.tool-excel,.tool-excel .tool-badge{background:#1d6f42}
+.dt-ic.tool-pbi,.tool-pbi .tool-badge{background:#c99a06}
+.dash-frame{
+  --surface:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--ink3:#77766f;--gridc:#e4e3df;--axisc:#c9c8c2;
+  --s1:#2a78d6;--s2:#eb6834;--o1:#86b6ef;--o2:#5598e7;--o3:#2a78d6;--o4:#1c5cab;--o5:#104281;
+  --good:#0a7d0a;--bad:#c62f2f;--panel:#f3f3f0;
+  position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);box-shadow:var(--shadow);font-family:"Inter",system-ui,sans-serif}
+[data-theme="dark"] .dash-frame{
+  --surface:#161d30;--ink:#f0efec;--ink2:#c3c2b7;--ink3:#9a998f;--gridc:#262f45;--axisc:#3a4560;
+  --s1:#3987e5;--s2:#d95926;--o1:#1c5cab;--o2:#256abf;--o3:#3987e5;--o4:#6da7ec;--o5:#9ec5f4;
+  --good:#3fbf3f;--bad:#ef6b6b;--panel:#1c2439}
+.dash-chrome{display:flex;align-items:center;gap:12px;padding:9px 14px;background:var(--panel);border-bottom:1px solid var(--gridc);font-size:.8rem;color:var(--ink2)}
+.dots{display:flex;gap:6px}.dots i{width:10px;height:10px;border-radius:50%;background:var(--axisc)}
+.tool-badge{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border-radius:7px;color:#fff;font-weight:700}
+.file{font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sample{margin-inline-start:auto;padding:2px 8px;border-radius:6px;border:1px solid var(--axisc);font-size:.72rem;white-space:nowrap}
+.dash-body{padding:18px}
+.dash-title h3{margin:0;font-size:1.15rem;color:var(--ink)}
+.dash-title p{margin:2px 0 0;color:var(--ink2);font-size:.86rem}
+.slicers{display:flex;flex-wrap:wrap;gap:14px 22px;margin:14px 0}
+.slicer{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sl-label{font-size:.78rem;font-weight:600;color:var(--ink2);text-transform:uppercase;letter-spacing:.06em}
+.sl-opts{display:inline-flex;flex-wrap:wrap;gap:3px;padding:3px;border-radius:10px;background:var(--panel);border:1px solid var(--gridc)}
+.sl-btn{padding:5px 12px;border:0;border-radius:8px;background:transparent;font-size:.83rem;font-weight:600;color:var(--ink2)}
+.sl-btn:hover{color:var(--ink)}
+.sl-btn.on{background:var(--surface);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.14)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px;border-radius:12px}
+.kpi{padding:13px 14px;border-radius:12px;background:var(--panel);border:1px solid var(--gridc);display:flex;flex-direction:column;gap:2px;min-width:0}
+.kpi-name{font-size:.78rem;color:var(--ink2);font-weight:600}
+.kpi-val{font-size:1.32rem;font-weight:800;color:var(--ink);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.kpi-delta{display:inline-flex;align-items:center;gap:4px;font-size:.78rem;font-weight:600}
+.kpi-delta svg{width:.9em;height:.9em}
+.kpi-delta.good{color:var(--good)}.kpi-delta.bad{color:var(--bad)}
+.kpi-delta .muted,.kpi-delta.muted{color:var(--ink3);font-weight:500}
+.dash-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:12px}
+.viz-card{padding:14px;border-radius:12px;border:1px solid var(--gridc);background:var(--surface);min-width:0;transition:box-shadow .3s,border-color .3s}
+.viz-card.wide{grid-column:1/-1}
+.viz-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
+.viz-head h4{margin:0;font-size:.9rem;color:var(--ink)}
+.viz-toggle{display:inline-flex;align-items:center;gap:5px;padding:4px 9px;border-radius:7px;border:1px solid var(--gridc);background:transparent;font-size:.75rem;color:var(--ink2)}
+.viz-toggle:hover{color:var(--ink);border-color:var(--axisc)}
+.legend{display:flex;gap:14px;font-size:.78rem;color:var(--ink2);margin-bottom:4px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.lg-line{width:14px;height:2px;border-radius:2px}.lg-rect{width:10px;height:10px;border-radius:3px}
+.viz-body{min-height:60px;overflow:hidden}
+.dash-frame svg.viz{display:block;width:100%;height:auto;overflow:visible}
+.viz .grid{stroke:var(--gridc);stroke-width:1}.viz .axis{stroke:var(--axisc);stroke-width:1}
+.viz .tick{fill:var(--ink3);font-size:11px}
+.viz .cat{fill:var(--ink2);font-size:12px}
+.viz .val{fill:var(--ink);font-size:11.5px;font-weight:600}
+.viz .end-label{fill:var(--ink2);font-size:11.5px;font-weight:600}
+.viz .line{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.viz .pt,.viz .hover-dot{stroke:var(--surface);stroke-width:2}
+.viz .cross{stroke:var(--ink3);stroke-width:1}
+.viz .bar-g{cursor:pointer;outline:none}
+.viz .bar-g:hover .bar,.viz .bar-g:focus .bar{filter:brightness(1.15)}
+.viz .bar-g.dim .bar{opacity:.28}
+.viz-table{width:100%;border-collapse:collapse;font-size:.8rem;font-variant-numeric:tabular-nums}
+.viz-table th,.viz-table td{padding:5px 8px;text-align:start;border-bottom:1px solid var(--gridc);color:var(--ink)}
+.viz-table th{color:var(--ink2);font-weight:600}
+.ai-panel{margin-top:12px;padding:14px 16px;border-radius:12px;background:linear-gradient(135deg,rgba(52,211,153,.10),rgba(56,189,248,.08));border:1px solid var(--gridc)}
+.ai-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.ai-badge{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:.9rem;color:var(--ink)}
+.ai-badge svg{color:#10b981}
+.ai-btn{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:9px;border:0;background:linear-gradient(135deg,#34d399,#38bdf8);color:#04121a;font-weight:700;font-size:.82rem}
+.ai-btn.busy svg{animation:spin2 1s linear infinite}
+@keyframes spin2{to{transform:rotate(360deg)}}
+.ai-out{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:.87rem;color:var(--ink);min-height:24px}
+.ai-out li{position:relative;padding-inline-start:16px;line-height:1.55}
+.ai-out li::before{content:"";position:absolute;inset-inline-start:0;top:.6em;width:6px;height:6px;border-radius:2px;background:#10b981;transform:rotate(45deg)}
+.ai-out .ai-hint{color:var(--ink3)}.ai-out .ai-hint::before{display:none}
+.ai-think{color:var(--ink2)}.ai-think::after{content:"…";animation:blink 1s steps(1) infinite}
+.spot-on{box-shadow:0 0 0 3px var(--s1)!important;border-color:transparent!important;border-radius:12px}
+.player-wrap{position:relative;z-index:4;background:var(--panel);border-top:1px solid var(--gridc)}
+.player{display:flex;align-items:center;gap:12px;padding:6px 14px 12px}
+.pp{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:0;background:var(--s1);color:#fff;flex:none}
+.track{position:relative;flex:1;height:6px;border-radius:99px;background:var(--gridc);cursor:pointer}
+.track::before{content:"";position:absolute;inset:-10px 0}
+.fill{position:absolute;inset-block:0;inset-inline-start:0;width:0;border-radius:inherit;background:var(--s1)}
+.tick{position:absolute;top:-2px;width:2px;height:10px;background:var(--surface);opacity:.9}
+.time{font-size:.76rem;color:var(--ink2);font-variant-numeric:tabular-nums;min-width:74px;text-align:end}
+.caption{display:flex;gap:10px;align-items:center;padding:12px 14px 4px;color:var(--ink);font-size:.88rem;min-height:44px}
+.cap-step{flex:none;padding:2px 8px;border-radius:6px;background:#34d399;color:#04121a;font-weight:700;font-size:.74rem}
+.vcursor{position:absolute;top:0;left:0;z-index:6;width:22px;height:22px;pointer-events:none;opacity:0;transition:transform .75s cubic-bezier(.4,0,.2,1),opacity .3s;transform:translate(50%,40%)}
+.vcursor svg{width:22px;height:22px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.4))}
+.dash-frame.playing .vcursor{opacity:1}
+.ripple{position:absolute;left:-9px;top:-9px;width:22px;height:22px;border-radius:50%;border:2px solid var(--s1);opacity:0}
+.vcursor.click .ripple{animation:rip .6s ease-out}
+@keyframes rip{from{opacity:1;transform:scale(.3)}to{opacity:0;transform:scale(2)}}
+.play-overlay{position:absolute;inset:0;z-index:7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:0;background:rgba(8,12,24,.55);backdrop-filter:blur(2px);color:#fff;font-size:1.05rem;font-weight:700;transition:.3s}
+.play-overlay small{font-weight:500;opacity:.8;font-size:.82rem}
+.big-play{display:grid;place-items:center;width:76px;height:76px;border-radius:50%;background:linear-gradient(135deg,#34d399,#38bdf8);color:#04121a;font-size:1.9rem;box-shadow:0 0 0 10px rgba(52,211,153,.2);transition:transform .3s}
+.play-overlay:hover .big-play{transform:scale(1.08)}
+.dash-frame.started .play-overlay{opacity:0;pointer-events:none}
+.viz-tip{position:fixed;z-index:80;pointer-events:none;min-width:130px;padding:9px 11px;border-radius:10px;background:var(--card-solid);border:1px solid var(--line-strong);box-shadow:var(--shadow);font:500 12px/1.45 "Inter",system-ui,sans-serif;color:var(--text);opacity:0;transition:opacity .15s}
+.viz-tip.show{opacity:1}
+.tt-title{color:var(--muted);font-weight:600;margin-bottom:4px}
+.tt-row{display:flex;align-items:center;gap:7px}
+.tt-row strong{font-size:13px;font-variant-numeric:tabular-nums}
+.tt-row span{color:var(--muted)}
+.tt-key{width:12px;height:2px;border-radius:2px;flex:none}
+
 /* edu */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .edu-icon{display:grid;place-items:center;width:52px;height:52px;border-radius:15px;background:var(--accent-bg);color:var(--accent);font-size:1.5rem;margin-bottom:16px}
@@ -186,7 +301,7 @@ button.chip:hover{border-color:var(--accent);color:var(--accent)}
 .kv{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 
 /* skills */
-.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;align-items:start}
 .skills .card h3{display:flex;align-items:center;gap:10px;margin-bottom:16px}
 .skills .card h3 svg{color:var(--accent)}
 .sk-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
@@ -241,7 +356,9 @@ footer{padding:50px 0 40px;text-align:center;color:var(--muted);font-size:.9rem}
   .about,.two,.contact-box{grid-template-columns:1fr}
   .skills{grid-template-columns:1fr 1fr}
   .odoo-grid{grid-template-columns:1fr 1fr}
-  .skills .card:first-child{grid-column:1/-1}
+  .ai-strip,.dash-tabs{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr 1fr}
+  .dash-grid{grid-template-columns:1fr}
   .soft-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:640px){
@@ -249,6 +366,10 @@ footer{padding:50px 0 40px;text-align:center;color:var(--muted);font-size:.9rem}
   .stats{grid-template-columns:1fr 1fr}
   .skills{grid-template-columns:1fr}
   .odoo-grid{grid-template-columns:1fr}
+  .dash-body{padding:14px 12px}
+  .kpi-val{font-size:1.08rem}
+  .file{display:none}
+  .caption{font-size:.8rem;align-items:flex-start}
   .arrow{display:none}
   .card{padding:20px}
   .contact-box{padding:24px}
@@ -281,6 +402,7 @@ footer{padding:50px 0 40px;text-align:center;color:var(--muted);font-size:.9rem}
       <a href="#about" data-i="nav_about"></a>
       <a href="#experience" data-i="nav_exp"></a>
       <a href="#odoo" data-i="nav_odoo"></a>
+      <a href="#dashboards" data-i="nav_dash"></a>
       <a href="#education" data-i="nav_edu"></a>
       <a href="#skills" data-i="nav_skills"></a>
       <a href="#contact" data-i="nav_contact"></a>
@@ -350,6 +472,13 @@ footer{padding:50px 0 40px;text-align:center;color:var(--muted);font-size:.9rem}
     <div class="odoo-grid" id="odooGrid"></div>
   </section>
 
+  <section class="sec" id="dashboards">
+    <div class="sec-head reveal"><div><div class="eyebrow" data-i="dash_eb"></div><h2 data-i="dash_h"></h2><p class="meta" style="margin:8px 0 0;max-width:680px" data-i="dash_p"></p></div></div>
+    <div class="ai-strip" id="aiStrip"></div>
+    <div class="dash-tabs reveal" id="dashTabs" role="tablist" aria-label="Dashboards"></div>
+    <div id="dashHost" class="reveal"></div>
+  </section>
+
   <section class="sec" id="education">
     <div class="sec-head reveal"><div><div class="eyebrow" data-i="edu_eb"></div><h2 data-i="edu_h"></h2></div></div>
     <div class="two">
@@ -383,6 +512,10 @@ footer{padding:50px 0 40px;text-align:center;color:var(--muted);font-size:.9rem}
         <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span data-i="sk_lang"></span></h3>
         <div id="langLevels"></div>
       </div>
+      <div class="card glow reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg><span data-i="sk_data"></span></h3>
+        <ul class="sk-list" id="dataSkills"></ul>
+      </div>
     </div>
     <div class="soft-grid" id="softGrid"></div>
   </section>
@@ -412,7 +545,7 @@ footer{padding:50px 0 40px;text-align:center;color:var(--muted);font-size:.9rem}
 /* ---------- content (EN / AR) ---------- */
 const T = {
   en:{
-    brand:"Yousef Gomaa", nav_about:"About", nav_exp:"Experience", nav_odoo:"Odoo", nav_edu:"Education", nav_skills:"Skills", nav_contact:"Contact",
+    brand:"Yousef Gomaa", nav_about:"About", nav_exp:"Experience", nav_odoo:"Odoo", nav_dash:"Dashboards", nav_edu:"Education", nav_skills:"Skills", nav_contact:"Contact",
     badge:"Open to new opportunities", hi:"Hi, I'm", name:"Yousef Mohamed Gomaa", iam:"",
     roles:["General Accountant","Treasury Accountant","AP & AR Specialist","Tax & Payroll Accountant"],
     lead:"Dedicated general accountant with hands-on experience in treasury, accounts payable, accounts receivable, tax, payroll and financial reporting — applying IFRS principles with Odoo and Comsys ERP to keep the numbers accurate.",
@@ -420,10 +553,12 @@ const T = {
     st1:"Years of experience", st2:"Companies", st3:"Professional roles", st4:"Bank Misr internships",
     about_eb:"About me", about_h:"Accuracy behind every number",
     summary:"Dedicated General Accountant with extensive experience in Treasury, Accounts Payable (AP), and Accounts Receivable (AR). Proficient in managing financial transactions and bank reconciliations while applying IFRS-based accounting principles to ensure accurate reporting. Skilled in utilizing Odoo and Comsys ERP systems to streamline financial workflows.",
-    highlights:["Treasury","Accounts Payable","Accounts Receivable","Bank Reconciliation","VAT & Tax Returns","Payroll","Month-end Close","IFRS"],
+    highlights:["Treasury","Accounts Payable","Accounts Receivable","Bank Reconciliation","VAT & Tax Returns","Payroll","Month-end Close","IFRS","Power BI","AI Data Analysis"],
     lbl_loc:"Location", loc:"Helwan, Cairo, Egypt", lbl_deg:"Education", deg_short:"B.Com Accounting — Helwan University",
     lbl_erp:"Systems", lbl_lang:"Languages", langs_short:"Arabic (Native) · English (Good)",
     odoo_eb:"ERP expertise", odoo_h:"Odoo ERP — Accounting", odoo_p:"Hands-on daily work in Odoo Accounting across the full cycle, from issuing documents to closing and reporting. Tap any card for details.", flow:["Invoice / Bill","Payment","Reconciliation","Reports"],
+    dash_eb:"Data analysis & AI", dash_h:"Interactive dashboards", dash_p:"Excel and Power BI dashboards with AI-assisted insights. Press play to watch a guided walkthrough, or explore them yourself: filters, tooltips, data tables and AI summaries are all live. Built with sample data.",
+    ai:[["AI-assisted data prep","Using AI tools (ChatGPT, Microsoft Copilot) to clean, reconcile and structure raw accounting data."],["Formulas, Power Query & DAX","Building and checking complex Excel formulas, Power Query steps and DAX measures faster with AI."],["Automated insights","Turning numbers into clear management summaries: variances, trends, risks and next actions."]],
     exp_eb:"Career path", exp_h:"Professional experience", all:"All",
     present:"Present", more:"Show all {n} tasks", less:"Show less", yr:"yr", mo:"mo",
     edu_eb:"Background", edu_h:"Education & training",
@@ -432,6 +567,7 @@ const T = {
     intern:["Financial data analysis","Report preparation","Account management"],
     sk_eb:"Toolkit", sk_h:"Skills & expertise", sk_acc:"Accounting skills", sk_tools:"Computer skills", sk_lang:"Languages",
     acc:["Solid understanding of accounting principles (IFRS)","Recording journal entries and preparing trial balances","Accounts payable (AP) and accounts receivable (AR) cycles","Preparing financial statements and bank reconciliations","Microsoft Excel: functions, PivotTables, VLOOKUP, XLOOKUP","Strong attention to detail and numerical accuracy","Good analytical and problem-solving skills","Eager to learn and grow; works well in a team"],
+    sk_data:"Data analysis & AI", data:["Excel dashboards: PivotTables, PivotCharts, slicers, Power Query","Power BI reports: data modeling, DAX measures, interactive visuals","Using AI tools (ChatGPT, Microsoft Copilot) to analyse data and draft insights","Variance, trend and aging analysis for management reporting","Automating recurring monthly reports"],
     tools:[["Microsoft Office & Excel","Very good",90],["Odoo ERP","Very good",85],["Comsys","Very good",85]],
     langs:[["Arabic","Native",100],["English","Good",70]],
     soft:["Leadership","Negotiation","Presentation","Organizational skills","Communication","Critical thinking","Self-motivation","Teamwork"],
@@ -440,7 +576,7 @@ const T = {
     footer:"© 2026 Yousef Mohamed Gomaa · General Accountant", title:"Yousef Gomaa | Portfolio", lang:"عربي"
   },
   ar:{
-    brand:"يوسف جمعة", nav_about:"نبذة", nav_exp:"الخبرات", nav_odoo:"أودو", nav_edu:"التعليم", nav_skills:"المهارات", nav_contact:"تواصل",
+    brand:"يوسف جمعة", nav_about:"نبذة", nav_exp:"الخبرات", nav_odoo:"أودو", nav_dash:"الداشبورد", nav_edu:"التعليم", nav_skills:"المهارات", nav_contact:"تواصل",
     badge:"متاح لفرص عمل جديدة", hi:"أهلاً، أنا", name:"يوسف محمد جمعة", iam:"",
     roles:["محاسب عام","محاسب خزينة","محاسب عملاء وموردين","محاسب ضرائب ورواتب"],
     lead:"محاسب عام لديه خبرة عملية في الخزينة وحسابات الموردين والعملاء والضرائب والرواتب وإعداد التقارير المالية، مع تطبيق معايير IFRS واستخدام أنظمة Odoo وComsys لضمان دقة الأرقام.",
@@ -448,10 +584,12 @@ const T = {
     st1:"سنوات خبرة", st2:"شركات", st3:"مناصب مهنية", st4:"تدريب في بنك مصر",
     about_eb:"نبذة عني", about_h:"دقة وراء كل رقم",
     summary:"محاسب عام متفانٍ لديه خبرة واسعة في الخزينة وحسابات الموردين (AP) وحسابات العملاء (AR). متمكن من إدارة المعاملات المالية والتسويات البنكية مع تطبيق مبادئ المحاسبة وفق معايير IFRS لضمان دقة التقارير، ومتمرس في استخدام أنظمة Odoo وComsys ERP لتبسيط سير العمل المالي.",
-    highlights:["الخزينة","حسابات الموردين","حسابات العملاء","التسويات البنكية","الإقرارات الضريبية","الرواتب","إقفال نهاية الشهر","IFRS"],
+    highlights:["الخزينة","حسابات الموردين","حسابات العملاء","التسويات البنكية","الإقرارات الضريبية","الرواتب","إقفال نهاية الشهر","IFRS","Power BI","تحليل البيانات بالذكاء الاصطناعي"],
     lbl_loc:"الموقع", loc:"حلوان، القاهرة، مصر", lbl_deg:"المؤهل", deg_short:"بكالوريوس تجارة محاسبة — جامعة حلوان",
     lbl_erp:"الأنظمة", lbl_lang:"اللغات", langs_short:"العربية (اللغة الأم) · الإنجليزية (جيد)",
     odoo_eb:"خبرة أنظمة ERP", odoo_h:"نظام Odoo — الحسابات", odoo_p:"عمل يومي على موديول الحسابات في Odoo يغطي الدورة كاملة، من إصدار المستندات حتى الإقفال والتقارير. اضغط على أي كارت لعرض التفاصيل.", flow:["الفاتورة","السداد","التسوية","التقارير"],
+    dash_eb:"تحليل البيانات والذكاء الاصطناعي", dash_h:"داشبوردات تفاعلية", dash_p:"داشبوردات Excel وPower BI مع تحليلات بمساعدة الذكاء الاصطناعي. اضغط تشغيل لمشاهدة شرح تفاعلي، أو جرّبها بنفسك: الفلاتر والتلميحات وجداول البيانات وملخصات الذكاء الاصطناعي كلها تعمل. مبنية ببيانات تجريبية.",
+    ai:[["تجهيز البيانات بالذكاء الاصطناعي","استخدام أدوات الذكاء الاصطناعي (ChatGPT وMicrosoft Copilot) لتنظيف البيانات المحاسبية ومطابقتها وتنظيمها."],["المعادلات وPower Query وDAX","بناء معادلات Excel المعقدة وخطوات Power Query ومقاييس DAX ومراجعتها بشكل أسرع بمساعدة الذكاء الاصطناعي."],["تحليلات تلقائية","تحويل الأرقام إلى ملخصات واضحة للإدارة: الانحرافات والاتجاهات والمخاطر والخطوات المقترحة."]],
     exp_eb:"المسار المهني", exp_h:"الخبرات العملية", all:"الكل",
     present:"حتى الآن", more:"عرض كل المهام ({n})", less:"عرض أقل", yr:"سنة", mo:"شهر",
     edu_eb:"الخلفية", edu_h:"التعليم والتدريب",
@@ -460,6 +598,7 @@ const T = {
     intern:["تحليل البيانات المالية","إعداد التقارير","إدارة الحسابات"],
     sk_eb:"الأدوات", sk_h:"المهارات والخبرات", sk_acc:"المهارات المحاسبية", sk_tools:"مهارات الحاسب", sk_lang:"اللغات",
     acc:["فهم قوي لمبادئ المحاسبة (IFRS)","تسجيل قيود اليومية وإعداد موازين المراجعة","دورات حسابات الموردين (AP) والعملاء (AR)","المساعدة في إعداد القوائم المالية والتسويات البنكية","Microsoft Excel: الدوال وPivotTables وVLOOKUP وXLOOKUP","اهتمام كبير بالتفاصيل ودقة الأرقام","مهارات تحليلية وقدرة على حل المشكلات","شغف بالتعلم والتطور والعمل ضمن فريق"],
+    sk_data:"تحليل البيانات والذكاء الاصطناعي", data:["داشبوردات Excel: PivotTables وPivotCharts وSlicers وPower Query","تقارير Power BI: نمذجة البيانات ومقاييس DAX والمرئيات التفاعلية","استخدام أدوات الذكاء الاصطناعي (ChatGPT وMicrosoft Copilot) لتحليل البيانات وصياغة النتائج","تحليل الانحرافات والاتجاهات وأعمار الديون لتقارير الإدارة","أتمتة التقارير الشهرية المتكررة"],
     tools:[["Microsoft Office & Excel","جيد جداً",90],["Odoo ERP","جيد جداً",85],["Comsys","جيد جداً",85]],
     langs:[["العربية","اللغة الأم",100],["الإنجليزية","جيد",70]],
     soft:["القيادة","التفاوض","العرض والتقديم","المهارات التنظيمية","التواصل","التفكير النقدي","التحفيز الذاتي","العمل الجماعي"],
@@ -717,9 +856,13 @@ function render(){
   $('#internList').innerHTML = t.intern.map(x=>`<li>${x}</li>`).join('');
   $('#accSkills').innerHTML = t.acc.map(x=>`<li>${esc(x)}</li>`).join('');
   $('#toolLevels').innerHTML = levels(t.tools);
+  $('#dataSkills').innerHTML = t.data.map(x=>`<li>${esc(x)}</li>`).join('');
   $('#langLevels').innerHTML = levels(t.langs);
   $('#softGrid').innerHTML = t.soft.map((s,i)=>`<div class="card glow soft reveal in">${svg(SOFT_ICONS[i])}<span>${s}</span></div>`).join('');
   bindGlow($('#softGrid'));
+  const aiIc = ['<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>','<path d="M4 7h16M4 12h10M4 17h6"/><path d="M17 14l3 3-3 3"/>','<path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/>'];
+  $('#aiStrip').innerHTML = t.ai.map(([h,d],i)=>`<div class="card glow ai-card reveal in"><span class="mod-ic">${svg(aiIc[i])}</span><div><h3>${h}</h3><p>${d}</p></div></div>`).join('');
+  bindGlow($('#aiStrip'));
   renderFilters(); renderJobs(); renderOdoo(); fillBars(); restartTyping();
 }
 
@@ -810,5 +953,6 @@ $('#totop').onclick = () => scrollTo({top:0, behavior:'smooth'});
 
 render(); onScroll();
 </script>
+<script src="./dashboards.js"></script>
 </body>
 </html>
