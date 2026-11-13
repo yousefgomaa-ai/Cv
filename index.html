@@ -154,6 +154,30 @@ button.chip:hover{border-color:var(--accent);color:var(--accent)}
 .more svg{transition:transform .3s}
 .job.open .more svg{transform:rotate(180deg)}
 
+/* odoo */
+.flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.step{display:flex;align-items:center;gap:9px;padding:10px 16px;border-radius:13px;background:var(--card);border:1px solid var(--line);font-weight:600;font-size:.92rem;animation:stepGlow 6s infinite}
+.step b{display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--accent-bg);color:var(--accent);font-size:.8rem}
+.step:nth-of-type(2){animation-delay:1.5s}.step:nth-of-type(3){animation-delay:3s}.step:nth-of-type(4){animation-delay:4.5s}
+@keyframes stepGlow{0%,20%{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-bg)}30%,100%{border-color:var(--line);box-shadow:none}}
+.arrow{color:var(--muted);font-size:1.1rem}
+[dir="rtl"] .arrow{transform:scaleX(-1)}
+.odoo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:start}
+.mod{width:100%;text-align:start;padding:20px;border:1px solid var(--line);display:block;cursor:pointer}
+.mod:hover{transform:translateY(-3px)}
+.mod.open{border-color:var(--accent)}
+.mod-head{display:flex;align-items:center;gap:12px}
+.mod-ic{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:var(--accent-bg);color:var(--accent);font-size:1.25rem;flex:none;transition:.3s}
+.mod.open .mod-ic,.mod:hover .mod-ic{background:var(--accent);color:#04121a}
+.mod h3{margin:0;font-size:1rem;line-height:1.35}
+.mod p{margin:10px 0 0;color:var(--muted);font-size:.88rem;line-height:1.55}
+.mod .plus{margin-inline-start:auto;color:var(--muted);transition:transform .3s}
+.mod.open .plus{transform:rotate(45deg);color:var(--accent)}
+.mod ul{display:none;list-style:none;margin:14px 0 0;padding:14px 0 0;border-top:1px dashed var(--line-strong);gap:8px}
+.mod.open ul{display:grid;animation:fadeIn .35s both}
+.mod li{display:flex;gap:9px;font-size:.87rem;color:var(--soft);line-height:1.5}
+.mod li svg{color:var(--accent);margin-top:4px;font-size:.85rem}
+
 /* edu */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .edu-icon{display:grid;place-items:center;width:52px;height:52px;border-radius:15px;background:var(--accent-bg);color:var(--accent);font-size:1.5rem;margin-bottom:16px}
@@ -216,6 +240,7 @@ footer{padding:50px 0 40px;text-align:center;color:var(--muted);font-size:.9rem}
   .float-tag{display:none}
   .about,.two,.contact-box{grid-template-columns:1fr}
   .skills{grid-template-columns:1fr 1fr}
+  .odoo-grid{grid-template-columns:1fr 1fr}
   .skills .card:first-child{grid-column:1/-1}
   .soft-grid{grid-template-columns:repeat(2,1fr)}
 }
@@ -223,6 +248,8 @@ footer{padding:50px 0 40px;text-align:center;color:var(--muted);font-size:.9rem}
   .wrap{padding:0 16px}
   .stats{grid-template-columns:1fr 1fr}
   .skills{grid-template-columns:1fr}
+  .odoo-grid{grid-template-columns:1fr}
+  .arrow{display:none}
   .card{padding:20px}
   .contact-box{padding:24px}
   .timeline{padding-inline-start:24px}
@@ -253,6 +280,7 @@ footer{padding:50px 0 40px;text-align:center;color:var(--muted);font-size:.9rem}
     <nav class="menu" id="menu" aria-label="Main">
       <a href="#about" data-i="nav_about"></a>
       <a href="#experience" data-i="nav_exp"></a>
+      <a href="#odoo" data-i="nav_odoo"></a>
       <a href="#education" data-i="nav_edu"></a>
       <a href="#skills" data-i="nav_skills"></a>
       <a href="#contact" data-i="nav_contact"></a>
@@ -314,6 +342,12 @@ footer{padding:50px 0 40px;text-align:center;color:var(--muted);font-size:.9rem}
       <div class="filters" id="filters" role="group"></div>
     </div>
     <div class="timeline" id="timeline"></div>
+  </section>
+
+  <section class="sec" id="odoo">
+    <div class="sec-head reveal"><div><div class="eyebrow" data-i="odoo_eb"></div><h2 data-i="odoo_h"></h2><p class="meta" style="margin:8px 0 0;max-width:640px" data-i="odoo_p"></p></div></div>
+    <div class="flow reveal" id="flow"></div>
+    <div class="odoo-grid" id="odooGrid"></div>
   </section>
 
   <section class="sec" id="education">
@@ -378,7 +412,7 @@ footer{padding:50px 0 40px;text-align:center;color:var(--muted);font-size:.9rem}
 /* ---------- content (EN / AR) ---------- */
 const T = {
   en:{
-    brand:"Yousef Gomaa", nav_about:"About", nav_exp:"Experience", nav_edu:"Education", nav_skills:"Skills", nav_contact:"Contact",
+    brand:"Yousef Gomaa", nav_about:"About", nav_exp:"Experience", nav_odoo:"Odoo", nav_edu:"Education", nav_skills:"Skills", nav_contact:"Contact",
     badge:"Open to new opportunities", hi:"Hi, I'm", name:"Yousef Mohamed Gomaa", iam:"",
     roles:["General Accountant","Treasury Accountant","AP & AR Specialist","Tax & Payroll Accountant"],
     lead:"Dedicated general accountant with hands-on experience in treasury, accounts payable, accounts receivable, tax, payroll and financial reporting — applying IFRS principles with Odoo and Comsys ERP to keep the numbers accurate.",
@@ -389,6 +423,7 @@ const T = {
     highlights:["Treasury","Accounts Payable","Accounts Receivable","Bank Reconciliation","VAT & Tax Returns","Payroll","Month-end Close","IFRS"],
     lbl_loc:"Location", loc:"Helwan, Cairo, Egypt", lbl_deg:"Education", deg_short:"B.Com Accounting — Helwan University",
     lbl_erp:"Systems", lbl_lang:"Languages", langs_short:"Arabic (Native) · English (Good)",
+    odoo_eb:"ERP expertise", odoo_h:"Odoo ERP — Accounting", odoo_p:"Hands-on daily work in Odoo Accounting across the full cycle, from issuing documents to closing and reporting. Tap any card for details.", flow:["Invoice / Bill","Payment","Reconciliation","Reports"],
     exp_eb:"Career path", exp_h:"Professional experience", all:"All",
     present:"Present", more:"Show all {n} tasks", less:"Show less", yr:"yr", mo:"mo",
     edu_eb:"Background", edu_h:"Education & training",
@@ -405,7 +440,7 @@ const T = {
     footer:"© 2026 Yousef Mohamed Gomaa · General Accountant", title:"Yousef Gomaa | Portfolio", lang:"عربي"
   },
   ar:{
-    brand:"يوسف جمعة", nav_about:"نبذة", nav_exp:"الخبرات", nav_edu:"التعليم", nav_skills:"المهارات", nav_contact:"تواصل",
+    brand:"يوسف جمعة", nav_about:"نبذة", nav_exp:"الخبرات", nav_odoo:"أودو", nav_edu:"التعليم", nav_skills:"المهارات", nav_contact:"تواصل",
     badge:"متاح لفرص عمل جديدة", hi:"أهلاً، أنا", name:"يوسف محمد جمعة", iam:"",
     roles:["محاسب عام","محاسب خزينة","محاسب عملاء وموردين","محاسب ضرائب ورواتب"],
     lead:"محاسب عام لديه خبرة عملية في الخزينة وحسابات الموردين والعملاء والضرائب والرواتب وإعداد التقارير المالية، مع تطبيق معايير IFRS واستخدام أنظمة Odoo وComsys لضمان دقة الأرقام.",
@@ -416,6 +451,7 @@ const T = {
     highlights:["الخزينة","حسابات الموردين","حسابات العملاء","التسويات البنكية","الإقرارات الضريبية","الرواتب","إقفال نهاية الشهر","IFRS"],
     lbl_loc:"الموقع", loc:"حلوان، القاهرة، مصر", lbl_deg:"المؤهل", deg_short:"بكالوريوس تجارة محاسبة — جامعة حلوان",
     lbl_erp:"الأنظمة", lbl_lang:"اللغات", langs_short:"العربية (اللغة الأم) · الإنجليزية (جيد)",
+    odoo_eb:"خبرة أنظمة ERP", odoo_h:"نظام Odoo — الحسابات", odoo_p:"عمل يومي على موديول الحسابات في Odoo يغطي الدورة كاملة، من إصدار المستندات حتى الإقفال والتقارير. اضغط على أي كارت لعرض التفاصيل.", flow:["الفاتورة","السداد","التسوية","التقارير"],
     exp_eb:"المسار المهني", exp_h:"الخبرات العملية", all:"الكل",
     present:"حتى الآن", more:"عرض كل المهام ({n})", less:"عرض أقل", yr:"سنة", mo:"شهر",
     edu_eb:"الخلفية", edu_h:"التعليم والتدريب",
@@ -562,6 +598,67 @@ const CHEV = svg('<path d="M6 9l6 6 6-6"/>');
 const CAL = svg('<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/>');
 const VISIBLE = 4;
 
+
+const ODOO = [
+  { ic:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/>',
+    t:{en:"Customer invoices",ar:"فواتير العملاء"}, d:{en:"Creating, validating and sending customer invoices.",ar:"إنشاء فواتير العملاء واعتمادها وإرسالها."},
+    p:{en:["Create invoices from scratch or from sales orders","Apply payment terms, taxes and discounts","Validate, post and send invoices to customers","Track invoice status: draft, posted, paid"],
+       ar:["إنشاء الفواتير يدوياً أو من أوامر البيع","تطبيق شروط الدفع والضرائب والخصومات","اعتماد الفواتير وترحيلها وإرسالها للعملاء","متابعة حالة الفاتورة: مسودة، مرحّلة، مدفوعة"]}},
+  { ic:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/>',
+    t:{en:"Vendor bills",ar:"فواتير الموردين"}, d:{en:"Recording supplier bills and matching them to purchases.",ar:"تسجيل فواتير الموردين ومطابقتها مع المشتريات."},
+    p:{en:["Record vendor bills with correct accounts and taxes","Match bills to purchase orders and received quantities","Schedule due dates and approved payments","Maintain vendor master data"],
+       ar:["تسجيل فواتير الموردين على الحسابات والضرائب الصحيحة","مطابقة الفواتير مع أوامر الشراء والكميات المستلمة","جدولة تواريخ الاستحقاق والمدفوعات المعتمدة","تحديث بيانات الموردين الأساسية"]}},
+  { ic:'<path d="M9 14l-4-4 4-4"/><path d="M5 10h11a4 4 0 0 1 0 8h-1"/>',
+    t:{en:"Credit notes",ar:"الإشعارات الدائنة"}, d:{en:"Issuing credit notes for returns, discounts and corrections.",ar:"إصدار إشعارات دائنة للمرتجعات والخصومات والتصحيحات."},
+    p:{en:["Issue customer and vendor credit notes","Reverse or partially credit posted invoices","Handle sales returns and price adjustments","Link credit notes to the original invoice"],
+       ar:["إصدار إشعارات دائنة للعملاء والموردين","عكس الفواتير المرحّلة كلياً أو جزئياً","معالجة مرتجعات المبيعات وتعديلات الأسعار","ربط الإشعار الدائن بالفاتورة الأصلية"]}},
+  { ic:'<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 8v4l3 2"/>',
+    t:{en:"Refunds",ar:"المرتجعات والاستردادات"}, d:{en:"Processing customer and vendor refunds end to end.",ar:"معالجة استردادات العملاء والموردين بالكامل."},
+    p:{en:["Register refund payments to customers","Record refunds received from vendors","Offset credit notes against open balances","Keep partner balances accurate after refunds"],
+       ar:["تسجيل مبالغ الاسترداد المدفوعة للعملاء","تسجيل الاستردادات المستلمة من الموردين","مقاصة الإشعارات الدائنة مع الأرصدة المفتوحة","الحفاظ على دقة أرصدة العملاء والموردين بعد الاسترداد"]}},
+  { ic:'<rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h3"/>',
+    t:{en:"Treasury management",ar:"إدارة الخزينة"}, d:{en:"Managing cash and bank journals, payments and receipts.",ar:"إدارة يوميات النقدية والبنوك والمدفوعات والمقبوضات."},
+    p:{en:["Register customer receipts and vendor payments","Manage cash and bank journals","Record internal transfers between cash and banks","Monitor daily cash and bank balances"],
+       ar:["تسجيل مقبوضات العملاء ومدفوعات الموردين","إدارة يوميات الخزينة والبنوك","تسجيل التحويلات الداخلية بين الخزينة والبنوك","متابعة أرصدة النقدية والبنوك يومياً"]}},
+  { ic:'<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11l2 2 4-4"/>',
+    t:{en:"Transaction review",ar:"مراجعة العمليات"}, d:{en:"Reviewing entries before posting to keep the books clean.",ar:"مراجعة القيود قبل الترحيل للحفاظ على دقة الدفاتر."},
+    p:{en:["Review draft entries against supporting documents","Verify accounts, taxes and partners on each entry","Correct errors and post approved entries","Trace transactions through the journal audit trail"],
+       ar:["مراجعة القيود المسودة مقابل المستندات المؤيدة","التحقق من الحسابات والضرائب والأطراف في كل قيد","تصحيح الأخطاء وترحيل القيود المعتمدة","تتبع العمليات من خلال سجل اليوميات"]}},
+  { ic:'<path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/><path d="M8 12l3 3 5-6"/>',
+    t:{en:"Reconciliations",ar:"التسويات"}, d:{en:"Bank and partner reconciliations, matching payments to invoices.",ar:"تسويات البنوك والعملاء والموردين ومطابقة المدفوعات مع الفواتير."},
+    p:{en:["Import and reconcile bank statements","Match payments with open invoices and bills","Reconcile customer and vendor accounts","Investigate and clear unreconciled items"],
+       ar:["استيراد كشوف الحساب البنكية وتسويتها","مطابقة المدفوعات مع الفواتير المفتوحة","تسوية حسابات العملاء والموردين","بحث البنود غير المسوّاة وتصفيتها"]}},
+  { ic:'<path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/>',
+    t:{en:"Financial reports",ar:"التقارير المالية"}, d:{en:"Extracting and analysing reports straight from Odoo.",ar:"استخراج التقارير وتحليلها مباشرة من Odoo."},
+    p:{en:["Trial balance and general ledger","Profit & loss and balance sheet","Aged receivables and aged payables","Partner ledger and Excel exports for analysis"],
+       ar:["ميزان المراجعة ودفتر الأستاذ العام","قائمة الدخل والميزانية العمومية","أعمار ديون العملاء والموردين","كشوف حسابات الأطراف والتصدير إلى Excel للتحليل"]}},
+  { ic:'<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+    t:{en:"Journal entries & closing",ar:"القيود والإقفال الشهري"}, d:{en:"Manual entries and month-end adjustments.",ar:"القيود اليدوية وتسويات نهاية الشهر."},
+    p:{en:["Post manual journal entries","Accruals and prepayments at month end","Fixed asset depreciation entries","Support month-end closing"],
+       ar:["ترحيل قيود اليومية اليدوية","قيود المصروفات المستحقة والمقدمة","قيود إهلاك الأصول الثابتة","المساعدة في الإقفال الشهري"]}},
+  { ic:'<path d="M19 5L5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/>',
+    t:{en:"Taxes & VAT",ar:"الضرائب والقيمة المضافة"}, d:{en:"Applying taxes on documents and preparing the VAT report.",ar:"تطبيق الضرائب على المستندات وإعداد تقرير القيمة المضافة."},
+    p:{en:["Apply correct VAT on sales and purchases","Review tax amounts on invoices and bills","Extract the VAT report for tax returns"],
+       ar:["تطبيق ضريبة القيمة المضافة الصحيحة على المبيعات والمشتريات","مراجعة مبالغ الضرائب على الفواتير","استخراج تقرير القيمة المضافة للإقرارات الضريبية"]}},
+  { ic:'<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/>',
+    t:{en:"Collections follow-up",ar:"متابعة التحصيل"}, d:{en:"Following up on overdue customer balances.",ar:"متابعة أرصدة العملاء المتأخرة."},
+    p:{en:["Track overdue invoices by customer","Send payment reminders and statements","Coordinate collections with sales"],
+       ar:["متابعة الفواتير المتأخرة لكل عميل","إرسال تذكيرات السداد وكشوف الحساب","التنسيق مع المبيعات بخصوص التحصيل"]}},
+  { ic:'<circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 11h6M19 8v6"/>',
+    t:{en:"Partner master data",ar:"بيانات العملاء والموردين"}, d:{en:"Setting up and maintaining customers and vendors.",ar:"إنشاء بيانات العملاء والموردين وتحديثها."},
+    p:{en:["Create customer and vendor records","Set receivable/payable accounts and payment terms","Keep tax IDs and contact data up to date"],
+       ar:["إنشاء سجلات العملاء والموردين","ضبط حسابات الذمم وشروط الدفع","تحديث الأرقام الضريبية وبيانات التواصل"]}}
+];
+const openMods = new Set();
+function renderOdoo(){
+  const L = lang;
+  $('#flow').innerHTML = T[L].flow.map((s,i)=>`${i?`<span class="arrow">${svg('<path d="M5 12h14M13 6l6 6-6 6"/>')}</span>`:''}<span class="step"><b>${i+1}</b>${s}</span>`).join('');
+  $('#odooGrid').innerHTML = ODOO.map((m,i)=>`<button type="button" class="card glow mod reveal in ${openMods.has(i)?'open':''}" data-mod="${i}" aria-expanded="${openMods.has(i)}">
+    <div class="mod-head"><span class="mod-ic">${svg(m.ic)}</span><h3>${m.t[L]}</h3><span class="plus">${svg('<path d="M12 5v14M5 12h14"/>')}</span></div>
+    <p>${m.d[L]}</p><ul>${m.p[L].map(x=>`<li>${CHECK}<span>${x}</span></li>`).join('')}</ul></button>`).join('');
+  bindGlow($('#odooGrid'));
+}
+
 /* ---------- state ---------- */
 const store = { get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}} };
 let lang = store.get('lang') || 'en';
@@ -623,7 +720,7 @@ function render(){
   $('#langLevels').innerHTML = levels(t.langs);
   $('#softGrid').innerHTML = t.soft.map((s,i)=>`<div class="card glow soft reveal in">${svg(SOFT_ICONS[i])}<span>${s}</span></div>`).join('');
   bindGlow($('#softGrid'));
-  renderFilters(); renderJobs(); fillBars(); restartTyping();
+  renderFilters(); renderJobs(); renderOdoo(); fillBars(); restartTyping();
 }
 
 /* ---------- interactions ---------- */
@@ -635,6 +732,8 @@ document.addEventListener('click', e => {
   const tb = e.target.closest('[data-tab]');
   if (tb){ roleTab[tb.dataset.job] = +tb.dataset.tab; renderJobs(); return; }
   const c = e.target.closest('[data-copy]');
+  const md = e.target.closest('[data-mod]');
+  if (md){ const i = +md.dataset.mod; openMods.has(i) ? openMods.delete(i) : openMods.add(i); renderOdoo(); return; }
   if (c){ (navigator.clipboard ? navigator.clipboard.writeText(c.dataset.copy) : Promise.reject()).then(()=>toast(T[lang].copied)).catch(()=>{}); return; }
   if (e.target.closest('.menu a')) closeMenu();
 });
